@@ -18,7 +18,8 @@ body {
 }
 .banner-img {
   background: url('../img/color_smoke.jpg') no-repeat;
-  height: 250px;
+  height: 150%;
+  width: 100%;
   background-size: cover;
   background-position: center;
   border-top: 3px solid #a7efdd;
