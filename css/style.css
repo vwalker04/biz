@@ -70,9 +70,9 @@ body {
   text-align: center;
   background-color: #13646D;
   padding: 20px 20px 0 20px;
-  overflow: hidden;
+  overflow: hidden !important;
   position: relative;
-  /*margin: 5px;*/
+  margin: 5px;
   border-radius: 5px;
   box-shadow: 10px 10px 5px #505359;
   color: #DDFFF5;
