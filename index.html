@@ -4,9 +4,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE-edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dynasty Label</title>
+  <title>Company Name Here</title>
   <!--Google Fonts-->
   <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   <!-- bxSlider CSS file -->
   <link href="css/jquery.bxslider.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -17,17 +18,25 @@
   crossorigin="anonymous"></script>
 </head>
 <body>
-  <!--Header and Nav-->
-  <div class="container-top">
+  <!-- Logo -->
+  <div class="container-top" id="home">
     <header>
-        <h1 id="logo">LOGO and NAME</h1>
-        <ul class="nav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+        <img id="logo" src="img/AV_Labels.png" alt="AV Labels Logo"/ width="150px">
     </header>
+
+  <!-- Banner image -->
+  <div class="banner-img">
+    <h3 id="supplying"><em>AV Labels supplies high temperature, freezer grade, UV-resistant, film, clear and many other suitable materials paired with a variety of adhesives for your specific applications.</em></h3>
   </div>
+
+  <!-- Navbar -->
+  <ul class="nav">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <!--Content inside wrapper -->
   <div class="wrapper">
     <!-- Start slider -->
     <div class="container-slider">
@@ -43,41 +52,43 @@
     <!-- End slider -->
 
     <!-- About section -->
-    <div class="container-about">
+    <div class="container-about" id="about">
       <section class="one-third">
         <h1>Providing more than just labels</h1>
-        <p>We provide branding solutions to help keep you competitive in the market. Whether its pressure sensitive labels, signage or business cards, we deliver quality product your organization needs to stand above the rest.</p>
+        <p>We provide branding solutions to help keep you competitive in the market. Whether its pressure sensitive labels, signage or coupon cards, we deliver quality product your organization needs to stand above the rest.</p>
         <img style="opacity:.75" src="img/branding.jpg" alt="picture of product labels" width="290px"/>
-
       </section>
       <section class="one-third">
         <h1>Affordable small batch runs</h1>
-        <p>We understand the upfront cost with tooling and plates. Not every label demands high volume quantities so we provide a lower cost digital option for short runs. Digital print allows for the flexibility you and your business require.</p>
+        <p>We understand the upfront cost with tooling and plates. Not every label demands high volume quantities so we provide an affordable short-run option for all your business demands.</p>
         <img src="img/limitedrelease.png" alt="Limited release beer picture" width="290px"/>
       </section>
       <section class="one-third">
         <h1>Not every label is created equal</h1>
-        <p>Variable printing, consecutive numbers and barcodes are just a few options we can provide you. Need different QR codes or Data Matrices on your products? We have you covered. We can use your provided databases or generate consecutive ones for you.</p>
+        <p>Variable printing, consecutive numbers and barcodes are just a few options we can provide you. Do you need different QR codes or Data Matrices on your products? We have you covered. We can use your provided databases or generate consecutive ones for you.</p>
         <img style="opacity:.75" src="img/barcode.jpg" alt="picture of variable numbered labels" width="290px"/>
       </section>
     </div>
     <!-- About section end -->
-
-    <!-- Contact us-->
-    <div class="container-contact">
-      <h1>Contact us</h1>
-      <p>Some info or some shit down here</p>
-    </div>
-    <!-- Contact us end -->
-
-
-
-
-
-
-
-
-
   </div>
+  <!-- Content inside wrapper above -->
+
+  <!-- Contact us-->
+  <div class="container-contact" id="contact">
+    <h1>Contact us!</h1>
+    <h3><em>AV Labels is here to provide you with more information, answer any questions you may have and create an effective solution for you label needs.</em></h3>
+    <p><img src="img/callicon.png" alt="phone number" width="20px">Call us at:<br>(248)123-1234<br>(248)321-4321</p>
+    <p><img src="img/emailicon.png" alt="email" width="20px">Email us at contact@avlabels.com</p>
+  </div>
+
+  <!-- Navbar bottom-->
+  <ul id="bottom-nav" class="nav">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <!-- Footer -->
+  <p id="footer">&copy;2017 AV Labels AVLabels.com</p>
 </body>
 </html>
