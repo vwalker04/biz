@@ -62,7 +62,6 @@ body {
 }
 .container-about {
   text-align: center;
-  position: static;
 }
 .one-third {
   display: inline-block;
@@ -71,8 +70,8 @@ body {
   text-align: center;
   background-color: #13646D;
   padding: 20px 20px 0 20px;
+  overflow: hidden;
   position: relative;
-  overflow: auto;
   margin: 5px;
   border-radius: 5px;
   box-shadow: 10px 10px 5px #505359;
@@ -88,9 +87,8 @@ body {
 }
 .one-third img {
   position: absolute;
-  margin: 0 auto;
-  right: 15px;
-  bottom: 15px;
+  right: 12px;
+  bottom: 12px;
   border-radius: 5px;
 }
 .container-contact {
