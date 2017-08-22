@@ -62,7 +62,7 @@ body {
 }
 .container-about {
   text-align: center;
-  height: 100%;
+  position: static;
 }
 .one-third {
   display: inline-block;
