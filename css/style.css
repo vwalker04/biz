@@ -71,13 +71,14 @@ body {
   background-color: #13646D;
   padding: 20px 20px 0 20px;
   overflow: hidden;
+  overflow-y: auto;
   position: relative;
   margin: 5px;
   border-radius: 5px;
   box-shadow: 10px 10px 5px #505359;
   color: #DDFFF5;
 }
-/*.one-third h1 {*/
+.one-third h1 {
   border-bottom: 2px solid;
   padding-bottom: 10px;
   margin-bottom: 10px;
