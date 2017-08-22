@@ -74,7 +74,7 @@ body {
   position: relative;
   margin: 5px;
   border-radius: 5px;
-  /*box-shadow: 10px 10px 5px #505359;*/
+  box-shadow: 10px 10px 5px #505359;
   color: #DDFFF5;
 }
 .one-third h1 {
@@ -85,7 +85,7 @@ body {
 .one-third p {
   font-size: 18px;
 }
-.one-third img {
+/*.one-third img {*/
   position: absolute;
   margin: 0 auto;
   right: 15px;
