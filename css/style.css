@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  position: relative;
 }
 body {
   background-color: #a7efdd /* Gray #DBDBDB*/;
@@ -10,6 +9,8 @@ body {
 .wrapper {
   margin: 0 auto;
   width: 90%;
+  position: relative;
+  overflow: hidden;
 }
 .container-top {
   color: #fff;
@@ -73,7 +74,6 @@ body {
   background-color: #13646D;
   padding: 20px 20px 0 20px;
   overflow-x: hidden;
-  position: relative;
   margin: 5px;
   border-radius: 5px;
   box-shadow: 10px 10px 5px #505359;
