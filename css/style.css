@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  position: relative;
 }
 body {
   background-color: #a7efdd /* Gray #DBDBDB*/;
@@ -71,7 +72,7 @@ body {
   text-align: center;
   background-color: #13646D;
   padding: 20px 20px 0 20px;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
   margin: 5px;
   border-radius: 5px;
