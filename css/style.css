@@ -9,8 +9,6 @@ body {
 .wrapper {
   margin: 0 auto;
   width: 90%;
-  position: relative;
-  overflow: hidden;
 }
 .container-top {
   color: #fff;
@@ -64,6 +62,7 @@ body {
 }
 .container-about {
   text-align: center;
+  position: relative;
 }
 .one-third {
   position: relative;
