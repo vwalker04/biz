@@ -5,6 +5,7 @@
 body {
   background-color: #a7efdd /* Gray #DBDBDB*/;
   font-family: 'Work Sans', sans-serif  ;
+    position: relative;
 }
 .wrapper {
   margin: 0 auto;
@@ -62,6 +63,8 @@ body {
 }
 .container-about {
   text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 .one-third {
   display: inline-block;
@@ -71,7 +74,7 @@ body {
   background-color: #13646D;
   padding: 20px 20px 0 20px;
   overflow: hidden;
-  /*position: relative;*/
+  position: relative;
   margin: 5px;
   border-radius: 5px;
   box-shadow: 10px 10px 5px #505359;
