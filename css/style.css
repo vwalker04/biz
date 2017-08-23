@@ -111,6 +111,10 @@ body {
 .container-contact p img {
   margin-right: 10px;
 }
+.tel {
+  text-decoration: none;
+  color: inherit;
+}
 #bottom-nav {
   border-top: 3px solid #a7efdd;
   border-bottom: 3px solid #a7efdd;
