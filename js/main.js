@@ -1,7 +1,7 @@
 $(document).ready(function (){
   $('.bxslider').bxSlider({
     auto: true,
-    pause: 3000,
+    pause: 4000,
     slideMargin: 20
   });
 
