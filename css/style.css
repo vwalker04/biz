@@ -81,17 +81,16 @@ body {
   border-bottom: 2px solid;
   padding-bottom: 10px;
   margin-bottom: 10px;
-  visibility: hidden;
 }
 .one-third p {
   font-size: 18px;
-  visibility: hidden;
 }
 .one-third img {
   position: absolute;
   right: 12px;
   bottom: 12px;
   border-radius: 5px;
+  visibility: hidden;
 }
 .container-contact {
   color: white;
