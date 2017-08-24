@@ -103,10 +103,13 @@ body {
 }
 /* Compensation for Safari compatibility */
 #first {
-  top: 21px;
+  top: 6px;
+}
+#second {
+  bottom: 15px;
 }
 #third {
-  top: 64px;
+  top: 49px;
 }
 /*----- About boxes END ------*/
 
@@ -117,7 +120,6 @@ body {
   border-top: 3px solid;
   margin-top: 80px;
   padding: 10px;
-  /*margin-bottom: 20px;*/
   text-align: center;
 }
 .container-contact h2 {
@@ -157,6 +159,9 @@ body {
   }
   #first {
     top: 0;
+  }
+  #second {
+    bottom: 0;
   }
   #third {
     top: 0;
