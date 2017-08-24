@@ -75,7 +75,7 @@ body {
   border-radius: 5px;
   box-shadow: 10px 10px 5px #505359;
   color: #DDFFF5;
-  overflow: auto;
+  overflow: scroll;
 }
 .one-third h1 {
   border-bottom: 2px solid;
@@ -90,7 +90,6 @@ body {
   right: 12px;
   bottom: 12px;
   border-radius: 5px;
-  visibility: hidden;
 }
 .container-contact {
   color: white;
