@@ -19,6 +19,14 @@ body {
   background-color: #13646D /* Navy Blue #102147 */;
   margin-right: 0;
 }
+header p {
+  color: #000;
+  float: right;
+  margin: 20px 10px;
+}
+.tagline {
+  font-weight: bold;
+}
 
 /* Banner Area */
 .banner-img {
