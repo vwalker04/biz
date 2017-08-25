@@ -22,7 +22,7 @@ body {
 header p {
   color: #000;
   font-size: 15px;
-  float: left;
+  text-align: center;
   padding: 0 0 10px 10px;
 }
 .tagline {
