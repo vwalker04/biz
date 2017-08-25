@@ -107,8 +107,8 @@ header p {
 }
 .one-third img {
   position: absolute;
-  right: 8px;
-  bottom: 8px;
+  right: 14px;
+  bottom: 14px;
   border-radius: 5px;
 }
 /* Compensation for Safari compatibility */
