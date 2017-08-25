@@ -22,9 +22,11 @@ body {
 header p {
   color: #000;
   float: left;
+  padding: 0 0 10px 10px;
 }
 .tagline {
   font-weight: bold;
+  color: #13646D;
 }
 
 /* Banner Area */
