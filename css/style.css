@@ -23,7 +23,7 @@ header p {
   color: #000;
   font-size: 20px;
   text-align: center;
-  padding: 0 0 20px 10px;
+  margin-bottom: 20px;
 }
 .tagline {
   font-weight: bold;
