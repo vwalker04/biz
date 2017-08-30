@@ -167,7 +167,7 @@ header p {
 }
 
    /*------ Media Queries ------ */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1096px) {
   .wrapper {
     width: 100%;
   }
