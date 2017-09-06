@@ -31,25 +31,6 @@ header p {
   color: #a7efdd;
 }
 
-/* Banner area */
-.banner-img {
-  background: url('../img/color_smoke.jpg') no-repeat;
-  height: 150%;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  border-top: 3px solid #a7efdd;
-  border-bottom: 3px solid #a7efdd;
-  display: table;
-}
-#supplying {
-  color: #fff;
-  text-align: center;
-  padding: 0 10px;
-  display: table-cell;
-  vertical-align: middle;
-}
-
 /* Nav START */
 .nav {
     margin:0;
@@ -57,7 +38,8 @@ header p {
     text-align:center;
     list-style: none;
     background-color: #000;
-    margin-bottom: 40px;
+    border-top: 3px solid #a7efdd;
+    border-bottom: 3px solid #a7efdd;
 }
 .nav li {
     display:inline;
@@ -67,12 +49,32 @@ header p {
     padding:10px;
     text-decoration: none;
     color: #fff;
+    font-weight: bold;
 }
 .nav li a:hover {
   background-color: #a7efdd;
   color: #000;
 }
 /* Nav END */
+
+/* Banner area */
+.banner-img {
+  background: url('../img/color_smoke.jpg') no-repeat;
+  height: 150%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: table;
+  margin-bottom: 80px;
+}
+#supplying {
+  color: #fff;
+  text-align: center;
+  padding: 0 10px;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 20px;
+}
 
 /* Slider */
 .container-slider {
@@ -129,7 +131,6 @@ header p {
   color: white;
   background-color: black;
   border-top: 3px solid white;
-  border-bottom: 3px solid white;
   margin-top: 80px;
   padding: 10px;
   text-align: center;
@@ -155,15 +156,24 @@ header p {
 
 /* Bottom nav */
 #bottom-nav {
-  border-bottom: 3px solid #a7efdd;
+  margin:0;
+  padding:0;
+  text-align:center;
+  list-style: none;
+  background-color: #000;
+  border-top: 3px solid #a7efdd;
 }
 
 /* Footer */
 #footer {
   text-align: center;
+  margin-top: 20px;
   margin-bottom: 20px;
   color: #000;
-  margin-top: -30px;
+}
+
+#footer a {
+  color: black;
 }
 
    /*------ Media Queries ------ */

@@ -1,3 +1,7 @@
+/* Forces user to load page https if not http */
+if (location.protocol != 'https:') {
+  location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+}
 $(document).ready(function (){
   /* Slider properties */
   $('.bxslider').bxSlider({
