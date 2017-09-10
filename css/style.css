@@ -74,6 +74,7 @@ header p {
   display: table-cell;
   vertical-align: middle;
   font-size: 20px;
+  font-weight: bold;
 }
 
 /* Slider */
@@ -138,12 +139,15 @@ header p {
 .container-contact h2 {
   margin: 30px 0;
 }
-.container-contact h3 {
+#help {
   margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: bold;
 }
 .container-contact p {
   line-height: 30px;
   margin-bottom: 30px;
+  font-size: 18px;
 }
 .container-contact p img {
   margin-right: 10px;
