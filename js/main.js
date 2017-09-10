@@ -1,7 +1,8 @@
-/* Forces user to load page https if not http */
-if (location.protocol != 'https:') {
-  location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-}
+/* Forces user to load page with https if not http */
+// if (location.protocol != 'https:') {
+//   location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+// }
+
 $(document).ready(function (){
   /* Slider properties */
   $('.bxslider').bxSlider({
@@ -10,7 +11,7 @@ $(document).ready(function (){
     slideMargin: 20
   });
 
-  /* About-container image brighten effect */
+  /* jQuery - About images brighten effect */
   $('.about_img').hover(function() {
     $(this).css("opacity", "1");
     }, function() {
