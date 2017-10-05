@@ -192,7 +192,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   color: black;
 }
 
-   /*------ Media Queries ------ */
+/*----------------Product Page----------------*/
+.product-box {
+  background-color: #13646D;
+  padding:10px;
+  border-radius: 5px;
+  margin-bottom: 80px;
+  box-shadow: 10px 10px 5px #505359
+}
+.product h2 {
+  /*margin: 20px;*/
+}
+.product p {
+  /*margin: 0px 20px;*/
+}
+
+/*------ Media Queries ------ */
 @media screen and (max-width: 1096px) {
   .wrapper {
     width: 100%;
@@ -207,6 +222,32 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
     margin: 0 auto;
     margin-bottom: 20px;
     max-width: 265px;
+  }
+  .nav {
+      margin:0;
+      padding:0;
+      text-align:center;
+      list-style: none;
+      background-color: /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+25,474747+39,2c2c2c+50,000000+51,111111+60,2b2b2b+76,1c1c1c+91,131313+100;Black+Gloss+%231 */
+  background: #4c4c4c; /* Old browsers */
+  background: -moz-linear-gradient(top,  #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+  ;
+      border-top: 3px solid #a7efdd;
+      border-bottom: 3px solid #a7efdd;
+  }
+  .nav li {
+      display:inline;
+  }
+  .nav a {
+      display:inline-block;
+      padding:5px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
   }
   /* Compensation for Safari offset */
   #first {
