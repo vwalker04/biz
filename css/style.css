@@ -249,6 +249,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
       font-size: 14px;
       font-weight: bold;
   }
+  .product-box {
+    max-width: 90%;
+  }
+
   /* Compensation for Safari offset */
   #first {
     top: 0;
