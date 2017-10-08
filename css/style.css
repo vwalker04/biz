@@ -11,7 +11,16 @@ body {
   margin: 0 auto;
   width: 90%;
 }
-
+/* Loader graphic */
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('img/bx_loader.gif') 50% 50% no-repeat rgb(249,249,249);
+}
 /* Logo & Tagline area */
 .container-top {
   color: #fff;
