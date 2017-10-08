@@ -23,7 +23,7 @@ header p {
   color: #000;
   font-size: 20px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 17px;
   font-style: italic;
 }
 .tagline {
@@ -100,6 +100,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
 .container-about {
   text-align: center;
 }
+/*.container-about img {
+  width: 90%;
+}*/
 .one-third {
   display: inline-block;
   position: relative;
@@ -112,6 +115,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   border-radius: 5px;
   box-shadow: 10px 10px 5px #505359;
   color: #DDFFF5;
+  vertical-align: top; /* Fixes unwanted inline-block staggering */
 }
 .one-third h1 {
   border-bottom: 2px solid;
@@ -126,17 +130,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   right: 15px;
   bottom: 15px;
   border-radius: 5px;
+  width: 90%;
 }
-/* Compensation for Safari offset */
-#first {
-  top: 6px;
-}
-#second {
-  bottom: 15px;
-}
-#third {
-  top: 49px;
-}
+
 /*----- About boxes END ------*/
 
 /* Contact area START */
@@ -194,35 +190,42 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
 
 /*----------------Product Page----------------*/
 .product-box {
+  margin: 0 auto;
   background-color: #13646D;
   padding:10px;
   border-radius: 5px;
   margin-bottom: 80px;
-  box-shadow: 10px 10px 5px #505359
+  box-shadow: 10px 10px 5px #505359;
+  text-align: center;
 }
-.product h2 {
-  /*margin: 20px;*/
-}
-.product p {
-  /*margin: 0px 20px;*/
+.product-box h2 {
+  margin-bottom: 20px;
+  border-bottom: white solid 2px;
 }
 
 /*------ Media Queries ------ */
-@media screen and (max-width: 1096px) {
+@media screen and (min-width: 1025px) {
   .wrapper {
     width: 100%;
   }
+  .one-third {
+    width: 400px;
+  }
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   header p {
     font-size: 18px;
   }
   .one-third {
-    display: block;
-    margin: 0 auto;
+    display: inline-block;
     margin-bottom: 20px;
     max-width: 265px;
   }
+  .product-box {
+    max-width: 90%;
+  }
+}
+@media screen and (max-width: 320px) {
   .nav {
       margin:0;
       padding:0;
@@ -249,18 +252,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
       font-size: 14px;
       font-weight: bold;
   }
-  .product-box {
-    max-width: 90%;
-  }
-
-  /* Compensation for Safari offset */
-  #first {
-    top: 0;
-  }
-  #second {
-    bottom: 0;
-  }
-  #third {
-    top: 0;
+  .wrapper {
+    width: 100%;
   }
 }
