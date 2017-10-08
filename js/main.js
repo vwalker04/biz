@@ -1,7 +1,7 @@
 /* Forces user to load page with https if not http */
-if (location.protocol != 'https:') {
-  location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-}
+// if (location.protocol != 'https:') {
+//   location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+// }
 
 //paste this code under the head tag or in a separate js file.
   // Wait for window load
