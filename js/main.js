@@ -20,7 +20,7 @@ $(document).ready(function (){
 
   /* Loader function */
   $(window).on("load", function(){
-    $('.loader').fadeOut('slow', function() {
+    $('.loader').fadeOut(3000, function() {
       $(this).remove();
     });
   });
