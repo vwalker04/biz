@@ -202,6 +202,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   margin-bottom: 20px;
   border-bottom: white solid 2px;
 }
+.product-box h3 {
+  margin-bottom: 40px;
+  line-height: 30px;
+}
+.product-box a {
+  text-decoration: none;
+  color: gray;
+}
 
 /*------ Media Queries ------ */
 @media screen and (min-width: 1025px) {
