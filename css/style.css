@@ -1,4 +1,3 @@
-
 /* Global */
 * {
   margin: 0;
@@ -12,6 +11,7 @@ body {
   margin: 0 auto;
   width: 90%;
 }
+
 /* Logo & Tagline area */
 .container-top {
   color: #fff;
