@@ -14,13 +14,20 @@
   <link href="css/jquery.bxslider.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <!-- jQuery library (served from Google) -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.js"
-  integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg="
-  crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <!-- js file for bxSlider -->
+  <script src="js/jquery.bxslider.min.js"></script>
+  <!-- code for Loading graphic -->
+  <script type="text/javascript">
+  $(window).load(function() {
+    $(".loader").fadeOut("slow");
+  });
+  </script>
 </head>
 <body>
   <!-- Loader graphic -->
   <div class="loader"></div>
+
   <!-- Logo -->
   <div class="container-top" id="home">
     <header>
@@ -102,8 +109,6 @@
 
   <!-- Footer -->
   <p id="footer">&copy;2017 AV Labels, LLC <a href="https://www.avlabels.com">AV Labels.com</a></p>
-
-  <script src="js/jquery.bxslider.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
