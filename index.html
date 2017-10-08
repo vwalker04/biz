@@ -17,10 +17,16 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.js"
   integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg="
   crossorigin="anonymous"></script>
+  <!-- Loading script -->
+  <script type="text/javascript">
+  $(window).load(function() {
+  	$(".loader").fadeOut("slow");
+  })
+  </script>
 </head>
 <body>
   <!-- Logo -->
-  <div class="container-top" id="home">
+  <div class="loader container-top" id="home">
     <header>
         <a href="https://www.avlabels.com"><img id="logo" src="img/AV_Labels.png" alt="AV Labels Logo" width="150px"></a>
         <p>Elevating your <span class="tagline">brand</span> with <span class="tagline">quality</span> products.</p>
