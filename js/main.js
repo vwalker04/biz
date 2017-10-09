@@ -1,14 +1,11 @@
-/* Forces user to load page with https if not http */
-if (location.protocol != 'https:') {
-  location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-}
-
 $(document).ready(function (){
   /* Slider properties */
   $('.bxslider').bxSlider({
+    mode: 'fade',
     auto: true,
-    pause: 4000,
-    slideMargin: 20
+    autoHover: true,
+    pause: 2750,
+    slideMargin: 0
   });
 
   /* jQuery - About images brighten effect */
@@ -18,13 +15,15 @@ $(document).ready(function (){
     $(this).css("opacity", ".80");
   });
 
-  /* Loader function */
+  /* Webpage pre-loader function */
   $(window).on("load", function(){
     $('.loader').fadeOut(4000, function() {
       $(this).remove();
     });
   });
 });
+
+/* Forces user to load page with https if not http */
 if (location.protocol != 'https:') {
   location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
 }
