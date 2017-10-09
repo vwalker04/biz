@@ -106,6 +106,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   width: 50%;
   min-width: 275px;
   margin: 0 auto;
+  text-align: center;
 }
 
 /*------ About boxes START ------*/
@@ -125,7 +126,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   padding: 20px 20px 0 20px;
   margin: 5px;
   border-radius: 5px;
-  box-shadow: 10px 10px 5px #505359;
+  box-shadow: 10px 10px 5px #6C7078;
   color: #DDFFF5;
   vertical-align: top; /* Fixes unwanted inline-block staggering */
 }
@@ -211,7 +212,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   padding:10px;
   border-radius: 5px;
   margin-bottom: 80px;
-  box-shadow: 10px 10px 5px #505359;
+  box-shadow: 10px 10px 5px #6C7078;
   text-align: center;
 }
 .product-box h2 {
