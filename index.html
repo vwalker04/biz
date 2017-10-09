@@ -109,6 +109,38 @@
 
   <!-- Footer -->
   <p id="footer">&copy;2017 AV Labels, LLC <a href="https://www.avlabels.com">AV Labels.com</a></p>
-  <script src="js/main.js"></script>
+
+  <!-- Inline javascript -->
+  <script type="text/javascript">
+  $(document).ready(function (){
+    /* Slider properties */
+    $('.bxslider').bxSlider({
+      mode: 'fade',
+      auto: true,
+      autoHover: true,
+      pause: 2750,
+      slideMargin: 0
+    });
+
+    /* jQuery - About images brighten effect */
+    $('.about_img').hover(function() {
+      $(this).css("opacity", "1");
+      }, function() {
+      $(this).css("opacity", ".80");
+    });
+
+    /* Webpage pre-loader function */
+    $(window).on("load", function(){
+      $('.loader').fadeOut(4000, function() {
+        $(this).remove();
+      });
+    });
+  });
+
+  /* Forces user to load page with https if not http */
+  if (location.protocol != 'https:') {
+    location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+  }
+  </script>
 </body>
 </html>
