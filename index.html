@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Microdata markup added by Google Structured Data Markup Helper. -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -29,9 +30,9 @@
   <div class="loader"></div>
 
   <!-- Logo -->
-  <div class="container-top" id="home">
+  <div itemscope itemtype="http://schema.org/Product" class="container-top" id="home">
     <header>
-        <a href="https://www.avlabels.com"><img id="logo" src="img/AV_Labels.png" alt="AV Labels Logo" width="150px"></a>
+        <a href="https://www.avlabels.com"><img itemprop="image" id="logo" src="img/AV_Labels.png" alt="AV Labels Logo" width="150px"></a>
         <p>Elevating your <span class="tagline">brand</span> with <span class="tagline">quality</span> products.</p>
     </header>
 
@@ -67,7 +68,7 @@
     <div class="container-about" id="about">
       <section class="one-third" id="first">
         <h1>Providing more than just labels</h1>
-        <p>We provide branding solutions to help keep you competitive in the market. Whether it's pressure sensitive labels, signage or coupon cards, we deliver quality products your organization needs to stand above the rest.</p>
+        <p itemprop="description">We provide branding solutions to help keep you competitive in the market. Whether it's pressure sensitive labels, signage or coupon cards, we deliver quality products your organization needs to stand above the rest.</p>
         <img class="about_img" style="opacity:.80" src="img/branding.jpg" alt="Branding, marketing and other business strategies on a tree"/>
       </section>
       <section class="one-third" id="second">
@@ -93,7 +94,7 @@
   <!-- Contact us-->
   <div class="container-contact" id="contact">
     <h2>Questions or quotes? Contact us!</h2>
-    <p id="help">AV Labels is here to provide you with more information, answer any questions you may have, and create an effective solution for your label needs.</p>
+    <p itemprop="brand" itemscope itemtype="http://schema.org/Brand" id="help"><span itemprop="name">AV Labels</span> is here to provide you with more information, answer any questions you may have, and create an effective solution for your label needs.</p>
     <p><img src="img/callicon.png" alt="phone number" width="20px">Call us<br><a href="tel:248-250-4324" class="tel"><div class="change_color">Adam King: 248-250-4324</div></a><br>
     <a href="tel:248-819-9136" class="tel"><div class="change_color">Vaughn Walker: 248-819-9136</div></a></p>
     <p><a href="mailto:contact@avlabels.com"><img src="img/emailicon.png" alt="email" width="20px"/></a>Email us at <a href="mailto:contact@avlabels.com" class="tel"><div class="change_color">contact@AVLabels.com</div></a></p>
@@ -109,7 +110,7 @@
   </ul>
 
   <!-- Footer -->
-  <p id="footer">&copy;2017 AV Labels, LLC <a href="https://www.avlabels.com">AV Labels.com</a></p>
+  <p id="footer">&copy;2017 <span itemprop="name">AV Labels, LLC</span> <a itemprop="url" href="https://www.avlabels.com">AV Labels.com</a></p>
   <script src="js/main.js"></script>
 </body>
 </html>
