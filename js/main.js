@@ -4,7 +4,7 @@ $(document).ready(function (){
     mode: 'fade',
     auto: true,
     autoHover: true,
-    pause: 2750,
+    pause: 4000,
     slideMargin: 0
   });
 
