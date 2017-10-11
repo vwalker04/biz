@@ -7,7 +7,7 @@
     height: 100%;
     z-index: 9999;
     background: url('../img/page-loader.gif') 50% 50% no-repeat rgb(19, 100, 109);
-    /*opacity: .8;*/
+    opacity: .8;
 }
 
 /* Global */
@@ -97,7 +97,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   padding: 0 10px;
   display: table-cell;
   vertical-align: middle;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
 }
 
@@ -127,7 +127,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   margin: 5px;
   border-radius: 5px;
   box-shadow: 10px 10px 5px #6C7078;
-  color: #DDFFF5;
+  color: #fff; /*#DDFFF5; light green color*/
   vertical-align: top; /* Fixes unwanted inline-block staggering */
 }
 .one-third h1 {
@@ -217,7 +217,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
 }
 .product-box h2 {
   margin-bottom: 20px;
-  border-bottom: white solid 2px;
+  border-bottom: #fff solid 2px;
   padding-bottom: 12px;
 }
 .product-box h3 {
@@ -226,13 +226,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
 }
 .product-box a {
   text-decoration: none;
-  color: gray;
+  color: #A0AEB0;
+}
+.change_contact:hover {
+  color: #00D961;
+  transition: .5s;
 }
 
 /*------ Media Queries ------ */
 @media screen and (min-width: 1025px) {
   .wrapper {
     width: 100%;
+  }
+  #supplying {
+    font-size: 28px;
   }
   .one-third {
     width: 400px;
@@ -251,7 +258,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
     max-width: 90%;
   }
 }
-@media screen and (max-width: 320px) {
+
+@media screen and (max-width: 425px) {
   .nav {
       margin:0;
       padding:0;
@@ -280,5 +288,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   }
   .wrapper {
     width: 100%;
+  }
+  #supplying {
+    font-size: 18px;
   }
 }
