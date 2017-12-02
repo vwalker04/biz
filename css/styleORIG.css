@@ -1,15 +1,3 @@
-/* Loader graphic code */
-.loader {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    background: url('../img/page-loader.gif') 50% 50% no-repeat rgb(19, 100, 109);
-    opacity: .8;
-}
-
 /* Global */
 * {
   margin: 0;
@@ -35,7 +23,7 @@ header p {
   color: #000;
   font-size: 20px;
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   font-style: italic;
 }
 .tagline {
@@ -97,7 +85,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   padding: 0 10px;
   display: table-cell;
   vertical-align: middle;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -106,16 +94,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   width: 50%;
   min-width: 275px;
   margin: 0 auto;
-  text-align: center;
 }
 
 /*------ About boxes START ------*/
 .container-about {
   text-align: center;
 }
-/*.container-about img {
-  width: 90%;
-}*/
 .one-third {
   display: inline-block;
   position: relative;
@@ -126,9 +110,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   padding: 20px 20px 0 20px;
   margin: 5px;
   border-radius: 5px;
-  box-shadow: 10px 10px 5px #6C7078;
-  color: #fff; /*#DDFFF5; light green color*/
-  vertical-align: top; /* Fixes unwanted inline-block staggering */
+  box-shadow: 10px 10px 5px #505359;
+  color: #DDFFF5;
 }
 .one-third h1 {
   border-bottom: 2px solid;
@@ -143,9 +126,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   right: 15px;
   bottom: 15px;
   border-radius: 5px;
-  width: 90%;
 }
-
+/* Compensation for Safari offset */
+#first {
+  top: 6px;
+}
+#second {
+  bottom: 15px;
+}
+#third {
+  top: 49px;
+}
 /*----- About boxes END ------*/
 
 /* Contact area START */
@@ -172,10 +163,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
 }
 .container-contact p img {
   margin-right: 10px;
-}
-.change_color:hover {
-  color: #13646D;
-  transition: .5s;
 }
 .tel {
   text-decoration: none;
@@ -205,94 +192,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   color: black;
 }
 
-/*----------------Product Page----------------*/
-.product-box {
-  margin: 0 auto;
-  background-color: #13646D;
-  padding:10px;
-  border-radius: 5px;
-  margin-bottom: 80px;
-  box-shadow: 10px 10px 5px #6C7078;
-  text-align: center;
-}
-.product-box h2 {
-  margin-bottom: 20px;
-  border-bottom: #fff solid 2px;
-  padding-bottom: 12px;
-}
-.product-box h3 {
-  margin-bottom: 40px;
-  line-height: 30px;
-}
-.product-box a {
-  text-decoration: none;
-  color: #A0AEB0;
-}
-.product-box ul {
-  list-style: none;
-}
-.change_contact:hover {
-  color: #00D961;
-  transition: .5s;
-}
-
-/*------ Media Queries ------ */
-@media screen and (min-width: 1025px) {
+   /*------ Media Queries ------ */
+@media screen and (max-width: 1096px) {
   .wrapper {
     width: 100%;
   }
-  #supplying {
-    font-size: 28px;
-  }
-  .one-third {
-    width: 400px;
-  }
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   header p {
     font-size: 18px;
   }
   .one-third {
-    display: inline-block;
+    display: block;
+    margin: 0 auto;
     margin-bottom: 20px;
     max-width: 265px;
   }
-  .product-box {
-    max-width: 90%;
+  /* Compensation for Safari offset */
+  #first {
+    top: 0;
   }
-}
-
-@media screen and (max-width: 425px) {
-  .nav {
-      margin:0;
-      padding:0;
-      text-align:center;
-      list-style: none;
-      background-color: /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+25,474747+39,2c2c2c+50,000000+51,111111+60,2b2b2b+76,1c1c1c+91,131313+100;Black+Gloss+%231 */
-  background: #4c4c4c; /* Old browsers */
-  background: -moz-linear-gradient(top,  #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
-  ;
-      border-top: 3px solid #a7efdd;
-      border-bottom: 3px solid #a7efdd;
+  #second {
+    bottom: 0;
   }
-  .nav li {
-      display:inline;
-  }
-  .nav a {
-      display:inline-block;
-      padding:5px;
-      text-decoration: none;
-      color: #fff;
-      font-size: 14px;
-      font-weight: bold;
-  }
-  .wrapper {
-    width: 100%;
-  }
-  #supplying {
-    font-size: 20px;
+  #third {
+    top: 0;
   }
 }
