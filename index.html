@@ -11,6 +11,15 @@
   <!--Google Fonts-->
   <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+  <!-- Bootstrap CDNs -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
   <!-- bxSlider CSS file -->
   <link href="css/jquery.bxslider.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -37,12 +46,33 @@
     </header>
 
   <!-- Navbar -->
-  <ul class="nav">
-    <li><a href="#home">HOME</a></li>
-    <li><a href="#about">ABOUT</a></li>
-    <li><a href="products.html">PRODUCTS</a></li>
-    <li><a href="#contact">CONTACT</a></li>
-  </ul>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="https://avlabels.com">AV Labels</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Generic Labels</a></li>
+              <li><a href="#">Food & Beverage</a></li>
+              <li><a href="#">Other Products</a></li>
+            </ul>
+          </li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <!-- Banner image -->
   <div class="banner-img">

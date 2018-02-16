@@ -24,6 +24,6 @@ $(document).ready(function (){
 
 });
 /* Forces user to load page with https if not http */
-if (location.protocol != 'https:') {
-  location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-}
+  // if (location.protocol != 'https:') {
+  //   location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+  // }
