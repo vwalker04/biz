@@ -183,6 +183,7 @@ body {
   color: #13646d;
 }
 
+
 @media (max-width: 768px) {
   .pantone-book, .sky {
     /* Create the parallax scrolling effect */
@@ -192,6 +193,14 @@ body {
     background-size: cover;
   }
 }
+
+/* Remove image for phones */
+@media (max-width: 375px) {
+  .sky {
+    display :none;
+  }
+}
+
 @media (max-width: 360px) {
   .tagline p {
     font-size: 15px;
