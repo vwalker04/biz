@@ -122,7 +122,7 @@ body {
 }
 
 /* Parallax Image */
-.smoke {
+.pantone-book {
       /* The image used */
   background-image: url("../img/panbook.jpg");
 
@@ -148,18 +148,18 @@ body {
   padding: 30px 0;
 }
 .panel-img {
-  border-radius: 10px;
+  border-radius: 0px;
 }
 .panel-text-dark {
   padding-top: 20px;
 }
-.panel-text-dark h1 {
+.panel-text-dark h1, .panel-text-light h1 {
   text-align: center;
   padding-bottom: 15px;
   border-bottom: 2px solid;
 }
-.panel-text-dark p {
-  text-align: justify;
+.panel-text-dark p, .panel-text-light p {
+  text-align: center;
   line-height: 2em;
   padding: 0 20px;
 }
@@ -167,19 +167,9 @@ body {
   padding-top: 20px;
   color: #13646d;
 }
-.panel-text-light h1 {
-  text-align: center;
-  padding-bottom: 15px;
-  border-bottom: 2px solid;
-}
-.panel-text-light p {
-  text-align: justify;
-  line-height: 2em;
-  padding: 0 20px;
-}
 
 @media (max-width: 768px) {
-  .smoke {
+  .pantone-book {
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
