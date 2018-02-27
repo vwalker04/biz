@@ -135,6 +135,19 @@ body {
   background-repeat: no-repeat;
   background-size: 100vw;
 }
+.sky {
+      /* The image used */
+  background-image: url("../img/jaime-serrano-unsplash.jpg");
+
+      /* Set a specific height */
+  min-height: 200px;
+
+      /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100vw;
+}
 
 
 /* Page content */
@@ -169,7 +182,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .pantone-book {
+  .pantone-book, .sky {
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
