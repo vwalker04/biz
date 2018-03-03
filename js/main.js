@@ -1,11 +1,11 @@
 $(document).ready(function (){
 
   /* jQuery - About images brighten effect */
-  $('.about_img').hover(function() {
-    $(this).css("opacity", "1");
-    }, function() {
-    $(this).css("opacity", ".80");
-  });
+  // $('.about_img').hover(function() {
+  //   $(this).css("opacity", "1");
+  //   }, function() {
+  //   $(this).css("opacity", ".80");
+  // });
 
 });
 

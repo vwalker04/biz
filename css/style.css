@@ -122,34 +122,27 @@ body {
   color: #CBFFEC;
 }
 
-/* Parallax Image */
+/* Parallax Image effect */
 .pantone-book {
-      /* The image used */
   background-image: url("../img/panbook.jpg");
 
-      /* Set a specific height */
   min-height: 300px;
 
-      /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100vw;
 }
-.sky {
-      /* The image used */
-  background-image: url("../img/jaime-serrano-unsplash.jpg");
-
-      /* Set a specific height */
-  min-height: 200px;
-
-      /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100vw;
+.banner-img {
+  background-color: #141414;
+  color: #CBFFEC;
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: -10px;
+  font-style: italic;
+  padding: 20px;
+  line-height: 2em;
 }
-
 
 /* Page content */
 .panel-space-dark {
@@ -192,7 +185,7 @@ body {
 }
 .questions {
   text-align: center;
-  border-bottom: 2px solid;
+  border-bottom: 1px solid;
   color: #CBFFEC;
   line-height: 2em;
 }
@@ -209,7 +202,7 @@ body {
   opacity: .8;
 }
 .quotes {
-  border-top: 2px solid;
+  border-top: 1px solid;
   margin-top: 30px;
   padding: 30px 0px;
   font-size: 18px;
@@ -229,6 +222,11 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  .banner-img {
+    font-size: 18px;
+    padding: 20px;
+    line-height: 2em;
   }
 }
 
