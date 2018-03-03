@@ -194,14 +194,12 @@ body {
   }
 }
 
-/* Remove image for phones */
-@media (max-width: 375px) {
-  .sky {
-    display :none;
-  }
-}
 
-@media (max-width: 360px) {
+@media (max-width: 376px) {
+  /* Remove image for phones */
+  .sky {
+    display: none;
+  }
   .tagline p {
     font-size: 15px;
   }
