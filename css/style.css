@@ -185,7 +185,7 @@ body {
 
 
 @media (max-width: 768px) {
-  .pantone-book, .sky {
+  .pantone-book {
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
@@ -196,10 +196,6 @@ body {
 
 
 @media only screen and (max-width: 376px) {
-  /* Remove image for phones */
-  .sky {
-    display: none;
-  }
   .tagline p {
     font-size: 15px;
   }
