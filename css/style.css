@@ -182,8 +182,11 @@ body {
   padding-top: 20px;
   color: #13646d;
 }
+.panel-text-dark a {
+  color: #1D9AA8;
+}
 
-.contact {
+#contact {
   background-color: #141414;
   color: #CBFFEC;
 }
