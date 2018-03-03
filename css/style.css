@@ -197,9 +197,9 @@ body {
 
 @media (max-width: 376px) {
   /* Remove image for phones */
-  .sky {
+  /* .sky {
     display: none;
-  }
+  } */
   .tagline p {
     font-size: 15px;
   }
