@@ -22,11 +22,10 @@ $(document).ready(function (){
     });
   });
 
-  $(window).resize(function(){
-	if ($(window).width() <= 375){
-		$('.sky').remove();
-	}
-});
+  // $(window).resize(function(){
+	// if ($(window).width() <= 375){
+	// 	$('.sky').remove();
+	// }
 
 });
 /* Forces user to load page with https if not http */
