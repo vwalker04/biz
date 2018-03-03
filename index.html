@@ -19,6 +19,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
     <!-- bxSlider CSS file -->
     <link href="css/jquery.bxslider.min.css" rel="stylesheet" />
@@ -114,6 +116,8 @@
       </div>
     </div>
 
+    <!-- Maybe an image here -->
+
     <div class="container-fluid">
       <div class="row panel-space-dark">
         <div class="col-md-6 text-center">
@@ -143,14 +147,21 @@
     <!-- Contact us-->
     <div class="contact">
       <div class="container">
-        <h2>Questions or quotes? Contact us!</h2>
-        <p itemprop="brand" itemscope itemtype="http://schema.org/Brand" id="help"><span itemprop="name">AV Labels</span> is here to provide you with more information, answer any questions you may have, and create an effective solution for your label needs.</p>
-        <div class="row">
-          <div class="col-md-2 col-md-offset-1">
-            <p><img src="img/callicon.png" alt="phone number" width="20px">Call us<br><a href="tel:248-250-4324" class="tel"><div class="change_color">Adam: 248-250-4324</div></a><br>
-            <a href="tel:248-819-9136" class="tel"><div class="change_color">Vaughn: 248-819-9136</div></a></p>
-            <p><a href="mailto:contact@avlabels.com"><img src="img/emailicon.png" alt="email" width="20px"/></a>Email us at <a href="mailto:contact@avlabels.com" class="tel"><div class="change_color">contact@AVLabels.com</div></a></p>
-            <p>Quotes are typically done within 24 hours. Most jobs are ready for shipping between 7 and 10 business days upon receiving customer approval.</p>
+        <div class="questions">
+          <h2>Questions or quotes? Contact us!</h2>
+          <p itemprop="brand" itemscope itemtype="http://schema.org/Brand" id="help"><span itemprop="name">AV Labels</span> is here to provide you with more information, answer any questions you may have, and create an effective solution for your label needs.</p>
+        </div>
+
+        <div class="row info">
+          <div class="col-md-3 col-md-offset-1">
+            <p><i class="fas fa-phone"></i> Call us</p>
+            <a href="tel:248-250-4324" class="tel"><p>Adam: 248 <i class="fas fa-caret-right"></i> 250 <i class="fas fa-caret-right"></i> 4324</p></a>
+            <a href="tel:248-819-9136" class="tel"><p>Vaughn: 248 <i class="fas fa-caret-right"></i> 819 <i class="fas fa-caret-right"></i> 9136</p></a>
+
+            <p><i class="fas fa-envelope"></i> Email us</p>
+            <a href="mailto:contact@avlabels.com" class="tel"><p>contact@AVLabels.com</p></a>
+
+            <p class="quotes">Quotes are typically done within 24 hours. Most jobs are ready for shipping between 7 and 10 business days upon receiving customer approval.</p>
           </div>
         </div>
       </div>
@@ -158,8 +169,8 @@
 
 
     <!-- Footer -->
-    <p id="footer">&copy;2017 <span itemprop="name">AV Labels, LLC</span> <a itemprop="url" href="https://www.avlabels.com">AV Labels.com</a></p>
-
+    <p id="footer">&copy;<script type="text/javascript">document.write((new Date()).getFullYear()); </script>
+    <span itemprop="name"> AV Labels, LLC</span> <a itemprop="url" href="https://www.avlabels.com">AV Labels.com</a></p>
 
     <script src="js/main.js"></script>
   </body>
