@@ -1,3 +1,10 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+}
+
+
 
 /* Bootstrap Nav */
 .navbar-default {
@@ -93,12 +100,11 @@
   margin-bottom: 0;
   border-radius: 0;
 }
+/* Nav END */
 
 
-/* CSS overrides */
-body {
-  font-family: 'Work Sans', sans-serif;
-}
+
+/* Header and Logo */
 .header {
   background-color: #13646d;
 }
@@ -121,8 +127,11 @@ body {
   font-weight: bold;
   color: #CBFFEC;
 }
+/* Header and Logo END */
 
-/* Parallax Image effect */
+
+
+/* Colorbook image and description */
 .pantone-book {
   background-image: url("../img/panbook.jpg");
 
@@ -144,8 +153,11 @@ body {
   line-height: 2em;
   letter-spacing: .5px;
 }
+/* Colorbook image description END */
 
-/* Page content */
+
+
+/* Panel content */
 .panel-space-dark {
   background-color: #13646d;
   color: #CBFFEC;
@@ -179,7 +191,11 @@ body {
 .panel-text-dark a {
   color: #1D9AA8;
 }
+/* Panel content END */
 
+
+
+/* Contact info and footer section */
 #contact {
   background-color: #141414;
   color: #CBFFEC;
@@ -196,6 +212,8 @@ body {
 }
 .questions p {
   font-size: 16px;
+  line-height: 2em;
+  letter-spacing: 1px;
 }
 .info {
   margin-top: 30px;
@@ -219,7 +237,11 @@ body {
   padding: 10px;
   margin-bottom: -10px; /* To get rid of whitespace at bottom */
 }
+/* Contact info and footer END */
 
+
+
+/* Media Queries */
 @media (max-width: 768px) {
   .pantone-book {
     /* Create the parallax scrolling effect */
@@ -229,14 +251,12 @@ body {
     background-size: 100%;
     min-height: 150px;
   }
-  .banner-img {
+  .description {
     font-size: 18px;
     padding: 20px;
     line-height: 2em;
   }
 }
-
-
 @media only screen and (max-width: 376px) {
   .tagline p {
     font-size: 15px;
