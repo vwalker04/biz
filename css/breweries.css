@@ -10,6 +10,8 @@
 .page-description {
   font-size: 18px;
   margin-bottom: 20px;
+  color: #13646d;
+  letter-spacing: 1px;
 }
 .item-row img {
   width: 100%;
@@ -21,4 +23,9 @@
   margin-top: 10px;
   line-height: 2em;
   text-align: justify;
+  letter-spacing: 1px;
+}
+.label-list {
+  list-style: none;
+  text-align: left;
 }

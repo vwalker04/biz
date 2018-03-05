@@ -13,4 +13,7 @@
 .item-row p {
   margin-top: 10px;
   line-height: 2em;
+  color: #13646d;
+  font-size: 16px;
+  text-align: justify;
 }
