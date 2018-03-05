@@ -1,49 +1,81 @@
 <!DOCTYPE html>
+<!-- Microdata markup added by Google Structured Data Markup Helper. -->
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE-edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Android browser color theme -->
-  <meta name="theme-color" content="#a7efdd" />
-  <title>AV Labels, LLC | Products & Services </title>
-  <!--Google Fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <!-- jQuery library (served from Google) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Android browser color theme -->
+    <meta name="theme-color" content="#13646D" />
+    <title>AV Labels, LLC | Product Label Specialists</title>
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 
-  <script type="text/javascript">
-  $(window).load(function() {
-      $(".loader").fadeOut("slow");
-  });
-  </script>
-</head>
-<body>
-  <!-- Logo -->
-  <div class="container-top" id="home">
-    <header>
-        <a href="https://www.avlabels.com"><img id="logo" src="img/AV_Labels.png" alt="AV Labels Logo" width="150px"></a>
-        <p>Elevating your <span class="tagline">brand</span> with <span class="tagline">quality</span> products.</p>
-    </header>
+    <!-- Bootstrap CDNs -->
+      <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <!-- Navbar -->
-  <ul class="nav">
-    <li><a href="index.html">HOME</a></li>
-    <li><a href="index.html#about">ABOUT</a></li>
-    <li><a href="products.html#supplying">PRODUCTS</a></li>
-    <li><a href="index.html#contact">CONTACT</a></li>
-  </ul>
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
-  <!-- Banner image -->
-  <div class="banner-img">
-    <p id="supplying">Products and Services</p>
-  </div>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- jQuery library (served from Google) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <!-- Logo -->
+    <div itemscope itemtype="http://schema.org/Product" id="home">
+      <div class="header">
+        <div class="container">
+          <div class="row row-flex">
+            <div class="col-md-4">
+              <a href="https://www.avlabels.com"><img itemprop="image" id="logo" src="img/AV_Labels.png" alt="AV Labels Logo" width="150px"></a>
+            </div>
+            <div class="tagline col-md-8">
+              <p>Elevating your <span class="tag-accent">brand</span> with <span class="tag-accent">quality</span> products.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-default">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="https://avlabels.com">AV Labels, LLC</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="https://avlabels.com">Home</a></li>
+          <li class=" active dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="active"><a href="#">Generic Labels</a></li>
+              <li><a href="#">Food & Beverage</a></li>
+              <li><a href="#">Other Products</a></li>
+            </ul>
+          </li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- End of Nav -->
 
   <!-- Page content -->
-  <div class="wrapper">
-    <div class="container product-box">
+  <div class="">
+    <div class="">
       <h2>Different Products for Different Applications</h2>
       <h3>We supply materials that are waterproof, heat resistant, freezer grade, food grade, UV resistant, film, clear, metallic and more. We pair them with a variety of suitable adhesives for your specific applications.</h3>
       <h3>Servicing breweries, meaderies, cideries and other bottling companies with:
@@ -64,16 +96,33 @@
   </div>
 
 
-  <!-- Navbar bottom-->
-  <ul id="bottom-nav" class="nav">
-    <li><a href="index.html">HOME</a></li>
-    <li><a href="index.html#about">ABOUT</a></li>
-    <li><a href="products.html#supplying">PRODUCTS</a></li>
-    <li><a href="index.html#contact">CONTACT</a></li>
-  </ul>
+  <!-- Contact us-->
+  <div id="contact">
+    <div class="container">
+      <div class="questions">
+        <h2>Questions or quotes? Contact us!</h2>
+        <p itemprop="brand" itemscope itemtype="http://schema.org/Brand" id="help"><span itemprop="name">AV Labels</span> is here to provide you with more information, answer any questions you may have, and create an effective solution for your label needs.</p>
+      </div>
+
+      <div class="row info">
+        <div class="col-md-3 col-md-offset-1">
+          <p><i class="fas fa-phone"></i> Call us</p>
+          <a href="tel:248-250-4324" class="tel"><p>Adam: 248 <i class="fas fa-caret-right"></i> 250 <i class="fas fa-caret-right"></i> 4324</p></a>
+          <a href="tel:248-819-9136" class="tel"><p>Vaughn: 248 <i class="fas fa-caret-right"></i> 819 <i class="fas fa-caret-right"></i> 9136</p></a>
+
+          <p><i class="fas fa-envelope"></i> Email us</p>
+          <a href="mailto:contact@avlabels.com" class="tel"><p>contact@AVLabels.com</p></a>
+
+          <p class="quotes">Quotes are typically done within 24 hours. Most jobs are ready for shipping between 7 and 10 business days upon receiving customer approval.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Footer -->
-  <p id="footer">&copy;2017 AV Labels, LLC <a href="https://www.avlabels.com">AV Labels.com</a></p>
+  <p id="footer">&copy;<script type="text/javascript">document.write((new Date()).getFullYear()); </script>
+  <span itemprop="name"> AV Labels, LLC</span> <a itemprop="url" href="https://www.avlabels.com">AV Labels.com</a></p>
 
   <script src="js/main.js"></script>
 </body>
