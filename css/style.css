@@ -130,8 +130,8 @@ body {
 
   background-attachment: fixed;
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100vw;
+  background-repeat: repeat; /* no-repeat */
+  background-size: 100%; /* 100vw */
 
     /* -webkit-transform: translateZ(-300px) scale(2);
     transform: translateZ(-300px) scale(2);
