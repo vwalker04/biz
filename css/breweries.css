@@ -21,11 +21,16 @@
 }
 .item-row p {
   margin-top: 10px;
-  line-height: 2em;
+  font-size: 16px;
+  line-height: 1.8em;
   text-align: justify;
   letter-spacing: 1px;
+  color: #13646d;
 }
 .label-list {
   list-style: none;
   text-align: left;
+  font-size: 16px;
+  color: #13646d;
+  letter-spacing: 1px;
 }
