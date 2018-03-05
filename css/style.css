@@ -130,12 +130,8 @@ body {
 
   background-attachment: fixed;
   background-position: center;
-  background-repeat: repeat; /* no-repeat */
-  background-size: 100%; /* 100vw */
-
-    /* -webkit-transform: translateZ(-300px) scale(2);
-    transform: translateZ(-300px) scale(2);
-    z-index: -1; */
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .banner-img {
   background-color: #141414;
@@ -222,10 +218,11 @@ body {
 @media (max-width: 768px) {
   .pantone-book {
     /* Create the parallax scrolling effect */
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-position: center;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-size: cover;
+    min-height: 150px;
   }
   .banner-img {
     font-size: 18px;
