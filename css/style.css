@@ -132,6 +132,10 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100vw;
+
+    /* -webkit-transform: translateZ(-300px) scale(2);
+    transform: translateZ(-300px) scale(2);
+    z-index: -1; */
 }
 .banner-img {
   background-color: #141414;
