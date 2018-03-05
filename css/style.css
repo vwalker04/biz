@@ -2,6 +2,7 @@ html, body {
   padding: 0;
   margin: 0;
   font-family: 'Work Sans', sans-serif;
+  background-color: #CBFFEC;
 }
 
 
@@ -164,7 +165,6 @@ html, body {
   padding: 30px 0;
 }
 .panel-space-light {
-  background-color: #CBFFEC;
   padding: 30px 0;
 }
 .panel-img {
@@ -173,18 +173,18 @@ html, body {
 .panel-text-dark {
   padding-top: 20px;
 }
-.panel-text-dark h1, .panel-text-light h1 {
+.panel-text-dark h1, .panel-text h1 {
   text-align: center;
   padding-bottom: 15px;
   border-bottom: 2px solid;
 }
-.panel-text-dark p, .panel-text-light p {
+.panel-text-dark p, .panel-text p {
   text-align: center;
   line-height: 2em;
   padding: 0 20px;
   font-size: 16px;
 }
-.panel-text-light {
+.panel-text {
   padding-top: 20px;
   color: #13646d;
 }
@@ -231,7 +231,6 @@ html, body {
   font-size: 18px;
 }
 #footer {
-  background-color: #CBFFEC;
   color: #13646d;
   text-align: center;
   padding: 10px;
@@ -261,7 +260,7 @@ html, body {
   .tagline p {
     font-size: 15px;
   }
-  .panel-text-dark p, .panel-text-light p {
+  .panel-text-dark p, .panel-text p {
     font-size: 18px;
   }
 }

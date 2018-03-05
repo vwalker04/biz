@@ -1,0 +1,16 @@
+.page-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 2px solid #13646d;
+  color: #13646d;
+  margin-bottom: 50px;
+}
+.item-row {
+  padding: 30px 0;
+}
+.item-row p {
+  margin-top: 10px;
+  line-height: 2em;:
+}
