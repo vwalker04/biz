@@ -133,7 +133,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.banner-img {
+.description {
   background-color: #141414;
   color: #CBFFEC;
   font-size: 25px;
@@ -142,6 +142,7 @@ body {
   font-style: italic;
   padding: 20px;
   line-height: 2em;
+  letter-spacing: .5px;
 }
 
 /* Page content */
@@ -188,6 +189,10 @@ body {
   border-bottom: 1px solid;
   color: #CBFFEC;
   line-height: 2em;
+}
+.questions h2 {
+  font-weight: bolder;
+  letter-spacing: 2px;
 }
 .questions p {
   font-size: 16px;
