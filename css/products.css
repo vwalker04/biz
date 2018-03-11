@@ -12,12 +12,16 @@
   margin-bottom: 20px;
   color: #13646d;
   letter-spacing: 1px;
+  line-height: 1.8;
+  text-align: center;
 }
 .item-row img {
   width: 100%;
 }
 .item-row {
   padding: 30px 0;
+  /* display: flex; */
+  color: #13646d;
 }
 .item-row p {
   margin-top: 10px;
@@ -25,13 +29,32 @@
   line-height: 1.8em;
   text-align: justify;
   letter-spacing: 1px;
-  color: #13646d;
 }
 .label-list {
-  list-style: none;
+  margin-top: 20px;
+  list-style: square;
   text-align: left;
   font-size: 16px;
   color: #13646d;
   letter-spacing: 1px;
   line-height: 1.8em;
+}
+.item-description {
+  vertical-align: middle;
+  align-self: center;
+  margin-top: 15px;
+}
+.order {
+  font-weight: bold;
+  color: #fff;
+  background-color: #1D9AA8;
+  padding: 5px 20px;
+  border-radius: 5px;
+  transition: .5s;
+}
+.order:hover {
+  background-color: #13646d;
+  transition: .5s;
+  text-decoration: none;
+  color: #fff;
 }

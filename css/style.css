@@ -191,6 +191,17 @@ html, body {
 .panel-text-dark a {
   color: #1D9AA8;
 }
+.generic-label-text {
+  font-size: 25px;
+  background-color: #000;
+  color: #CBFFEC;
+  text-align: center;
+  padding: 20px;
+}
+.generic-label-text a {
+  color: #CBFFEC;
+  text-decoration: underline;
+}
 /* Panel content END */
 
 
@@ -256,6 +267,10 @@ html, body {
     padding: 20px;
     line-height: 2em;
   }
+  .generic-label-text {
+    font-size: 20px;
+  }
+
 }
 @media only screen and (max-width: 376px) {
   .tagline p {
