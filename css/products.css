@@ -3,14 +3,14 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  border-bottom: 2px solid #13646d;
-  color: #13646d;
+  border-bottom: 2px solid #1D98A6;
+  color: #1D98A6;
   margin-bottom: 50px;
 }
 .page-description {
   font-size: 18px;
   margin-bottom: 20px;
-  color: #13646d;
+  color: #1D98A6;
   letter-spacing: 1px;
   line-height: 1.8;
   text-align: center;
@@ -21,7 +21,7 @@
 .item-row {
   padding: 30px 0;
   /* display: flex; */
-  color: #13646d;
+  color: #1D98A6;
 }
 .item-row p {
   margin-top: 10px;
@@ -35,7 +35,7 @@
   list-style: square;
   text-align: left;
   font-size: 16px;
-  color: #13646d;
+  color: #1D98A6;
   letter-spacing: 1px;
   line-height: 1.8em;
 }
@@ -53,7 +53,7 @@
   transition: .5s;
 }
 .order:hover {
-  background-color: #13646d;
+  background-color: #1D98A6;
   transition: .5s;
   text-decoration: none;
   color: #fff;

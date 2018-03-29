@@ -10,7 +10,7 @@ html, body {
 /* Bootstrap Nav */
 .navbar-default {
   background-color: #141414;
-  border-color: #13646d;
+  border-color: #1D98A6;
 }
 .navbar-default .navbar-brand {
   color: #CBFFEC;
@@ -38,35 +38,35 @@ html, body {
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
   color: #CBFFEC;
-  background-color: #13646d;
+  background-color: #1D98A6;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li.divider {
-  background-color: #13646d;
+  background-color: #1D98A6;
 }
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
   color: #CBFFEC;
-  background-color: #13646d;
+  background-color: #1D98A6;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #CBFFEC;
-  background-color: #13646d;
+  background-color: #1D98A6;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   color: #CBFFEC;
-  background-color: #13646d;
+  background-color: #1D98A6;
 }
 .navbar-default .navbar-toggle {
-  border-color: #13646d;
+  border-color: #1D98A6;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #13646d;
+  background-color: #1D98A6;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #CBFFEC;
@@ -94,7 +94,7 @@ html, body {
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #CBFFEC;
-    background-color: #13646d;
+    background-color: #1D98A6;
   }
 }
 .navbar {
@@ -107,7 +107,8 @@ html, body {
 
 /* Header and Logo */
 .header {
-  background-color: #13646d;
+  background-color: #1D98A6;
+  /* background-color: #-13646d; //Original color */
 }
 .row-flex {
   display: flex;
@@ -160,7 +161,7 @@ html, body {
 
 /* Panel content */
 .panel-space-dark {
-  background-color: #13646d;
+  background-color: #1D98A6;
   color: #CBFFEC;
   padding: 30px 0;
 }
@@ -186,7 +187,7 @@ html, body {
 }
 .panel-text {
   padding-top: 20px;
-  color: #13646d;
+  color: #1D98A6;
 }
 .panel-text-dark a {
   color: #1D9AA8;
@@ -242,7 +243,7 @@ html, body {
   font-size: 18px;
 }
 #footer {
-  color: #13646d;
+  color: #1D98A6;
   text-align: center;
   padding: 10px;
   margin-bottom: -10px; /* To get rid of whitespace at bottom */
