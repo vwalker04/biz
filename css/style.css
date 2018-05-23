@@ -193,8 +193,11 @@ html, body {
   color: #1D98A6;
 }
 .panel-text-dark a {
-  color: #1D9AA8;
+  color: #FFF;
 }
+/* .panel-text-dark a:visited {
+  color: #0C4147;
+} */
 .generic-label-text {
   font-size: 25px;
   background-color: #000;
