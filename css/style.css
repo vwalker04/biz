@@ -195,9 +195,9 @@ html, body {
 .panel-text-dark a {
   color: #FFF;
 }
-/* .panel-text-dark a:visited {
+.panel-text-dark a:visited {
   color: #0C4147;
-} */
+}
 .generic-label-text {
   font-size: 25px;
   background-color: #000;
@@ -206,8 +206,18 @@ html, body {
   padding: 20px;
 }
 .generic-label-text a {
+  color: #1D98A6;
+  transition: .6s;
+}
+.generic-label-text a:hover {
   color: #CBFFEC;
-  text-decoration: underline;
+  text-decoration: none;
+  
+}
+#general {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: underline;  
 }
 /* Panel content END */
 
