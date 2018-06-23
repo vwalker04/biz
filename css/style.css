@@ -172,7 +172,7 @@ html, body {
   padding: 30px 0;
 }
 .panel-img {
-  border-radius: 0px;
+  border-radius: 3px;
 }
 .panel-text-dark {
   padding-top: 20px;
