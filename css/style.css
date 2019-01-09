@@ -295,4 +295,7 @@ html, body {
   .panel-text-dark p, .panel-text p {
     font-size: 18px;
   }
+  #made-local-img {
+    width: 80%;
+  }
 }
