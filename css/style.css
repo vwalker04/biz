@@ -232,14 +232,14 @@ html, body {
   width: auto;
 }
 
-#aluminum-can-img {
+.can-img-props {
   display: block;
-  width: 20%;
+  width: 10%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.can-local-img-props {
+.local-img-props {
   display: block;
   width: 20%;
   margin-left: auto;
@@ -312,6 +312,12 @@ html, body {
   .generic-label-text {
     font-size: 20px;
   }
+  .can-img-props {
+    display: block;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 }
 @media only screen and (max-width: 376px) {
@@ -321,7 +327,13 @@ html, body {
   .panel-text-dark p, .panel-text p {
     font-size: 18px;
   }
-  .can-local-img-props {
+  .can-img-props {
+    display: block;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .local-img-props {
     width: 50%;
     display: block;
     margin-left: auto;
