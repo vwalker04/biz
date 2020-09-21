@@ -5,7 +5,10 @@ html, body {
   background-color: #CBFFEC;
 }
 
+.vertical-align-text {
+  text-align: center;
 
+}
 
 /* Bootstrap Nav */
 .navbar-default {
@@ -203,6 +206,7 @@ html, body {
   background-color: #000;
   color: #CBFFEC;
   text-align: center;
+  flex: 1;
   padding: 20px;
 }
 .generic-label-text a {
@@ -210,6 +214,7 @@ html, body {
   transition: .6s;
 }
 .generic-label-text a:hover {
+  padding: 10px;
   color: #CBFFEC;
   text-decoration: none;
   
@@ -218,6 +223,27 @@ html, body {
   text-transform: uppercase;
   font-weight: bold;
   text-decoration: underline;  
+}
+
+.can-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: auto;
+}
+
+#aluminum-can-img {
+  display: block;
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.can-local-img-props {
+  display: block;
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
 }
 /* Panel content END */
 
@@ -295,7 +321,10 @@ html, body {
   .panel-text-dark p, .panel-text p {
     font-size: 18px;
   }
-  #made-local-img {
-    width: 80%;
+  .can-local-img-props {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
