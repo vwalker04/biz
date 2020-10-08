@@ -4,10 +4,11 @@ html, body {
   font-family: 'Work Sans', sans-serif;
   background-color: #CBFFEC;
 }
-
 .vertical-align-text {
   text-align: center;
-
+}
+.margin-top {
+  margin-top: 20px;
 }
 
 /* Bootstrap Nav */
@@ -291,7 +292,12 @@ html, body {
 }
 /* Contact info and footer END */
 
-
+/* About page */
+#about-av-logo {
+  width: 40%;
+  padding-bottom: 10px;
+}
+/* About page END */
 
 /* Media Queries */
 @media (max-width: 768px) {
