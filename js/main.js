@@ -11,7 +11,7 @@
         formElements.map(input => (data[input.name] = input.value));
 
         // Log what our lambda function will receive
-        console.log(JSON.stringify(data));
+        console.log(`Data being sent to the API: ${JSON.stringify(data)}`);
 
         // Construct HTTP request
         let xhr = new XMLHttpRequest();
