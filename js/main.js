@@ -32,7 +32,7 @@
                 formResponse.innerHTML = 'Thanks for the message. I’ll be in touch shortly.';
             } else {
                 // The form submission failed
-                console.log("Fail")
+                console.log("Response code: ", response.target.status)
                 formResponse.innerHTML = 'Something went wrong';
                 console.error(JSON.parse(response.target.response).message);
             }
