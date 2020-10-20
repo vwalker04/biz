@@ -49,5 +49,5 @@ function addPadding() {
 }
 
 function fadeOut() {
-    setTimeout( () => $(responseMessage).fadeOut(2500), 7500);
+    setTimeout( () => $(responseMessage).fadeOut(2500), 10000);
 }
