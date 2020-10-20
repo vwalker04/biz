@@ -11,8 +11,8 @@ function sendEmail(formData, callback) {
         /* more CC email addresses */
       ],
       ToAddresses: [
-        // 'vaughn@avlabels.com',
-        'contact@avlabels.com'
+        'vaughn@avlabels.com',
+        'adam@avlabels.com'
         /* more To email addresses */
       ]
     },
