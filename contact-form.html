@@ -89,25 +89,28 @@
   <!-- End of Nav -->
 
   <!-- Page content -->
-  <div class="container">
+  <div class="contact-form-container">
 
     <p id="js-form-response"></p>
     <br>
-    
-    <form action="https://o6y770oe24.execute-api.us-east-2.amazonaws.com/dev/static-site-mailer" method="POST">
-      <label>
-        Name
-        <input type="text" name="name" required>
-      </label>
-      <label>
-        Email
-        <input type="email" name="reply_to" required>
-      </label>
-      <label>
-        Message:
-        <textarea name="message" required></textarea>
-      </label>
-      <button type="submit">Send Message</button>
+
+    <form class="contact-form" action="https://o6y770oe24.execute-api.us-east-2.amazonaws.com/dev/static-site-mailer"
+      method="POST">
+      <label class="form-label">Name</label>
+      <input class="form-input" type="text" name="name" required><br>
+
+      <label class="form-label">Email</label>
+      <input class="form-input" type="email" name="reply_to" required><br>
+
+      <label class="form-label">Phone Number</label>
+      <input class="form-input" type="phone" name="phone" placeholder="Optional"><br>
+
+      <label class="form-label">Message:</label>
+      <textarea class="form-input" rows="5" minlength="25" name="message"
+        placeholder="e.g. &quot;I'd like a quote for 5,000 2&quot; circle stickers. 2 colors with matte finish.&quot;"
+        required></textarea><br>
+
+      <button class="submit-btn" type="submit">Send Message</button>
     </form>
 
   </div>

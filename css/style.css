@@ -175,6 +175,35 @@ html, body {
   letter-spacing: .5px;
 }
 
+.contact-form-container {
+  text-align: center;
+  width: 50%;
+  padding-top: 20px;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  grid-gap: 10px;
+}
+
+.form-label {
+  grid-column: 1 / 2;
+}
+
+.form-input {
+  grid-column: 2 / 3;
+  color: black;
+}
+
+.submit-btn {
+  background-color: #13656E;
+  color: #FFF;
+  margin: 10px;
+  border-radius: 5px;
+}
+/* Contact form response END */
+
 /* Panel content */
 .panel-space-dark {
   background-color: #1D98A6;
@@ -287,12 +316,12 @@ html, body {
   color: #fff;
   opacity: .8;
 }
-.quotes {
+/* .quotes {
   border-top: 1px solid;
   margin-top: 30px;
   padding: 30px 0px;
   font-size: 18px;
-}
+} */
 #footer {
   color: #1D98A6;
   text-align: center;
@@ -353,5 +382,9 @@ html, body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+  }
+  .contact-form-container {
+    text-align: center;
+    width: 90%;
   }
 }

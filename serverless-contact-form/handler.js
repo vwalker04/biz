@@ -43,7 +43,7 @@ module.exports.staticSiteMailer = (event, context, callback) => {
       statusCode: err ? 500 : 200,
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Origin' : 'https://www.avlabels.com',
         'Access-Control-Allow-Headers':'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
         'Access-Control-Allow-Credentials' : true,
       },
