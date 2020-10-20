@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <form action="https://o6y770oe24.execute-api.us-east-2.amazonaws.com/dev" method="POST">
+            <label>
+              Name
+              <input type="text" name="name" required>
+            </label>
+            <label>
+              Email
+              <input type="email" name="reply_to" required>
+            </label>
+            <label>
+              Message:
+              <textarea name="message" required></textarea>
+            </label>
+            <button type="submit">Send Message</button>
+          </form>
+          <p id="js-form-response"></p>
+          <script src="index.js"></script>
+    </body>
+</html>
