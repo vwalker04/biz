@@ -22,7 +22,7 @@ function sendEmail(formData, callback) {
       Body: {
          Text: {
           Charset: "UTF-8",
-          Data: `Message: ${formData.message}\n\nSender Name: ${formData.name}\nSender Email: ${formData.reply_to}\nPhone No:${formData.phone}`
+          Data: `Message: ${formData.message}\n\nSender Name: ${formData.name}\nSender Email: ${formData.reply_to}\nPhone No: ${formData.phone}`
          }
       },
       Subject: {
