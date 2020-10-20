@@ -1,6 +1,8 @@
+const responseMessage = document.getElementById('js-form-response');
+
 (() => {
     const form = document.querySelector('form');
-    const formResponse = document.querySelector('js-form-response');
+    const formResponse = document.getElementById('js-form-response');
 
     form.onsubmit = e => {
         e.preventDefault();
@@ -29,7 +31,9 @@
                 // The form submission was successful
                 console.log("Success")
                 form.reset();
-                formResponse.innerHTML = 'Thanks for the message. I’ll be in touch shortly.';
+                addPadding();
+                formResponse.innerHTML = "You're message has been successfully delivered 🎉. We'll be in touch soon!";
+                fadeOut();
             } else {
                 // The form submission failed
                 console.log("Response code: ", response.target.status)
@@ -39,3 +43,11 @@
         };
     };
 })();
+
+function addPadding() {
+    responseMessage.setAttribute('style', 'padding: 20px');
+}
+
+function fadeOut() {
+    setTimeout( () => $(responseMessage).fadeOut(2500), 1000);
+}

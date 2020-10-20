@@ -164,7 +164,16 @@ html, body {
 }
 /* Colorbook image description END */
 
-
+/* Contact form response */
+#js-form-response {
+  background-color: #13656E;
+  width: 50%;
+  margin: 20px auto;
+  color: #FFF;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: .5px;
+}
 
 /* Panel content */
 .panel-space-dark {
