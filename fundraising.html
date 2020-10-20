@@ -127,10 +127,35 @@
 
     <!-- Contact us-->
     <div id="contact">
+
       <div class="container">
         <div class="questions">
           <h2>Questions or quotes? Contact us!</h2>
           <p itemprop="brand" itemscope itemtype="http://schema.org/Brand" id="help"><span itemprop="name">AV Labels</span> is here to provide you with more information, answer any questions you may have, and create an effective solution for your printing needs.</p>
+        </div>
+
+        <div class="contact-form-container">
+
+          <form class="contact-form" action="https://o6y770oe24.execute-api.us-east-2.amazonaws.com/dev/static-site-mailer"
+            method="POST">
+            <label class="form-label">Name</label>
+            <input class="form-input" type="text" name="name" required><br>
+      
+            <label class="form-label">Email</label>
+            <input class="form-input" type="email" name="reply_to" required><br>
+      
+            <label class="form-label">Phone Number</label>
+            <input class="form-input" type="phone" name="phone" placeholder="Optional"><br>
+      
+            <label class="form-label">Message:</label>
+            <textarea class="form-input" rows="5" minlength="25" name="message"
+              placeholder="e.g. &quot;I'd like a quote for 5,000 2&quot; circle stickers. 2 colors with matte finish.&quot;"
+              required></textarea><br>
+      
+            <button class="submit-btn" type="submit">Send Message</button>
+          </form>
+          
+          <p id="js-form-response"></p>
         </div>
 
         <div class="row info">
@@ -142,7 +167,10 @@
             <p><i class="fas fa-envelope"></i> Email us</p>
             <a href="mailto:contact@avlabels.com" class="tel"><p>contact@AVLabels.com</p></a>
 
-            <p class="quotes">Quotes are typically done within 24 hours. Most jobs are ready for shipping between 7 and 10 business days upon receiving customer approval.</p>
+          </div>
+          <div class="col-md-3">
+            <p class="quotes">Quotes are typically done within 24 hours. 
+              Most jobs are ready for shipping between 7 and 10 business days upon receiving customer approval.</p>
           </div>
         </div>
       </div>
