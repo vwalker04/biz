@@ -167,7 +167,7 @@ html, body {
 /* Contact form response */
 #js-form-response {
   background-color: #13656E;
-  width: 50%;
+  width: auto;
   margin: 20px auto;
   color: #FFF;
   border-radius: 5px;
