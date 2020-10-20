@@ -36,8 +36,8 @@ const responseMessage = document.getElementById('js-form-response');
                 fadeOut();
             } else {
                 // The form submission failed
-                console.log("Response code: ", response.target.status)
-                formResponse.innerHTML = 'Something went wrong';
+                addPadding();
+                formResponse.innerHTML = "Something went wrong. Please try again later or <a href=\"mailto:contact@avlabels.com\">email us</a>";
                 console.error(JSON.parse(response.target.response).message);
             }
         };
