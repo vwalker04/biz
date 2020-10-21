@@ -179,11 +179,12 @@ html, body {
   text-align: center;
   width: 50%;
   padding-top: 20px;
+  margin: auto;
 }
 
 .contact-form {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 100px 1fr;
   grid-gap: 10px;
 }
 
