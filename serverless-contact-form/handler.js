@@ -20,9 +20,13 @@ function sendEmail(formData, callback) {
     ReplyToAddresses: [formData.reply_to],
     Message: {
       Body: {
-         Text: {
+         Html: {
           Charset: "UTF-8",
-          Data: `Message: ${formData.message}\n\nSender Name: ${formData.name}\nSender Email: ${formData.reply_to}\nPhone No: ${formData.phone}`
+          Data: `<b><u>Message:</u></b><br>
+          ${formData.message}<br><br>
+          <b><u>Sender Name:</u></b> ${formData.name}<br>
+          <b><u>Sender Email:</u></b> ${formData.reply_to}<br>
+          <b><u>Phone No:</u></b> ${formData.phone}<br>`
          }
       },
       Subject: {
