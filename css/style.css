@@ -171,7 +171,7 @@ html, body {
   color: black;
 }
 
-.submit-btn {
+#submit-btn {
   background-color: #13656E;
   color: #FFF;
   margin: 10px;
