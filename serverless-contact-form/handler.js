@@ -43,20 +43,20 @@ function sendEmail(formData, callback) {
 
 module.exports.staticSiteMailer = async (event, context, callback) => {
   const body = JSON.parse(event.body);
-  let verifyResult;
+  // let verifyResult;
   
-  if (body["g-recaptcha-response"] != null) {
-    try {
-      verifyResult = await axios.post(reCaptchaUrl, {
-        secret: process.env.RECAPTCHA_SECRET_KEY,
-        response: body["g-recaptcha-response"]
-      })
-    } catch {
-        console.err("reCAPTCHA was unsuccessful.")
-    }
-  } 
+  // if (body["g-recaptcha-response"] != null) {
+  //   try {
+  //     verifyResult = await axios.post(reCaptchaUrl, {
+  //       secret: process.env.RECAPTCHA_SECRET_KEY,
+  //       response: body["g-recaptcha-response"]
+  //     })
+  //   } catch {
+  //       console.err("reCAPTCHA was unsuccessful.")
+  //   }
+  // } 
 
-  if (verifyResult.status === 200) {
+  // if (verifyResult.status === 200) {
     sendEmail(body, (err, data) => {
       const response = {
         statusCode: err ? 500 : 200,
@@ -73,6 +73,6 @@ module.exports.staticSiteMailer = async (event, context, callback) => {
   
       callback(null, response);
     });
-  }
+  // }
 
 };
