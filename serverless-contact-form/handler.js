@@ -3,7 +3,9 @@
 const AWS = require('aws-sdk');
 const SES = new AWS.SES();
 const axios = require('axios');
-const reCapUrl = "https://www.google.com/recaptcha/api/siteverify";
+const reCaptchaUrl = "https://www.google.com/recaptcha/api/siteverify";
+const dotenv = require('dotenv');
+dotenv.config();
 
 function sendEmail(formData, callback) {
   const emailParams = {
@@ -39,25 +41,38 @@ function sendEmail(formData, callback) {
   SES.sendEmail(emailParams, callback);
 }
 
-module.exports.staticSiteMailer = (event, context, callback) => {
-  const formData = JSON.parse(event.body);
-  console.log(`form data: ${formData}`);
+module.exports.staticSiteMailer = async (event, context, callback) => {
+  const body = JSON.parse(event.body);
+  let verifyResult;
+  
+  if (body["g-recaptcha-response"] != null) {
+    try {
+      verifyResult = await axios.post(reCaptchaUrl, {
+        secret: process.env.RECAPTCHA_SECRET_KEY,
+        response: body["g-recaptcha-response"]
+      })
+    } catch {
+        console.err("reCAPTCHA was unsuccessful.")
+    }
+  } 
 
-  sendEmail(formData, (err, data) => {
-    const response = {
-      statusCode: err ? 500 : 200,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin' : 'https://www.avlabels.com',
-        'Access-Control-Allow-Headers':'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
-        'Access-Control-Allow-Credentials' : true,
-      },
-      body: JSON.stringify({
-        message: err ? err.message : data,
-      }),
-    };
-
-    callback(null, response);
-  });
+  if (verifyResult.status === 200) {
+    sendEmail(body, (err, data) => {
+      const response = {
+        statusCode: err ? 500 : 200,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin' : 'https://www.avlabels.com',
+          'Access-Control-Allow-Headers':'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
+          'Access-Control-Allow-Credentials' : true,
+        },
+        body: JSON.stringify({
+          message: err ? err.message : data,
+        }),
+      };
+  
+      callback(null, response);
+    });
+  }
 
 };
