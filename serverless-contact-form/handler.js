@@ -7,13 +7,11 @@ function sendEmail(formData, callback) {
   const emailParams = {
     Destination: {
       CcAddresses: [
-        // 'vwalk04@gmail.com',
-        /* more CC email addresses */
+        // Optional CC Addresses here
       ],
       ToAddresses: [
         'vaughn@avlabels.com',
         'adam@avlabels.com'
-        /* more To email addresses */
       ]
     },
     Source: 'contact@avlabels.com', /* required */
@@ -22,11 +20,11 @@ function sendEmail(formData, callback) {
       Body: {
          Html: {
           Charset: "UTF-8",
-          Data: `<b><u>Message:</u></b><br>
-          ${formData.message}<br><br>
-          <b><u>Sender Name:</u></b> ${formData.name}<br>
-          <b><u>Sender Email:</u></b> ${formData.reply_to}<br>
-          <b><u>Phone No:</u></b> ${formData.phone}<br>`
+          Data: `<b><u>Message:</u></b><br/>
+          ${formData.message}<br/><br/>
+          <b><u>Sender Name:</u></b> ${formData.name}<br/>
+          <b><u>Sender Email:</u></b> ${formData.reply_to}<br/>
+          <b><u>Phone No:</u></b> ${formData.phone}<br/>`
          }
       },
       Subject: {
@@ -42,7 +40,7 @@ function sendEmail(formData, callback) {
 module.exports.staticSiteMailer = (event, context, callback) => {
   const formData = JSON.parse(event.body);
 
-  sendEmail(formData, function(err, data) {
+  sendEmail(formData, (err, data) => {
     const response = {
       statusCode: err ? 500 : 200,
       headers: {
