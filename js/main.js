@@ -51,3 +51,7 @@ function addPadding() {
 function fadeOut() {
     setTimeout( () => $(responseMessage).fadeOut(2500), 10000);
 }
+
+function enableButton(response) {
+  document.getElementById('submit-btn').disabled = false;
+}
