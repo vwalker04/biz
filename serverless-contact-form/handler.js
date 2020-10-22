@@ -15,7 +15,7 @@ function sendEmail(formData, callback) {
       ],
       ToAddresses: [
         'vaughn@avlabels.com',
-        // 'adam@avlabels.com'
+        'adam@avlabels.com'
       ]
     },
     Source: 'contact@avlabels.com', /* required */
@@ -41,22 +41,22 @@ function sendEmail(formData, callback) {
   SES.sendEmail(emailParams, callback);
 }
 
-module.exports.staticSiteMailer = async (event, context, callback) => {
+module.exports.staticSiteMailer = (event, context, callback) => {
   const body = JSON.parse(event.body);
-  let verifyResult;
+  // let verifyResult;
   
-  if (body["g-recaptcha-response"] != null) {
-    try {
-      verifyResult = await axios.post(reCaptchaUrl, {
-        secret: process.env.RECAPTCHA_SECRET_KEY,
-        response: body["g-recaptcha-response"]
-      })
-    } catch {
-        console.err("reCAPTCHA was unsuccessful.")
-    }
-  } 
+  // if (body["g-recaptcha-response"] != null) {
+  //   try {
+  //     verifyResult = await axios.post(reCaptchaUrl, {
+  //       secret: process.env.RECAPTCHA_SECRET_KEY,
+  //       response: body["g-recaptcha-response"]
+  //     })
+  //   } catch {
+  //       console.err("reCAPTCHA was unsuccessful.")
+  //   }
+  // } 
 
-  if (verifyResult.status === 200) {
+  // if (verifyResult.status === 200) {
     sendEmail(body, (err, data) => {
       const response = {
         statusCode: err ? 500 : 200,
@@ -73,6 +73,6 @@ module.exports.staticSiteMailer = async (event, context, callback) => {
   
       callback(null, response);
     });
-  }
+  // }
 
 };
