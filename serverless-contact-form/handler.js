@@ -2,6 +2,8 @@
 
 const AWS = require('aws-sdk');
 const SES = new AWS.SES();
+const axios = require('axios');
+const reCapUrl = "https://www.google.com/recaptcha/api/siteverify";
 
 function sendEmail(formData, callback) {
   const emailParams = {
@@ -11,7 +13,7 @@ function sendEmail(formData, callback) {
       ],
       ToAddresses: [
         'vaughn@avlabels.com',
-        'adam@avlabels.com'
+        // 'adam@avlabels.com'
       ]
     },
     Source: 'contact@avlabels.com', /* required */
@@ -39,6 +41,7 @@ function sendEmail(formData, callback) {
 
 module.exports.staticSiteMailer = (event, context, callback) => {
   const formData = JSON.parse(event.body);
+  console.log(`form data: ${formData}`);
 
   sendEmail(formData, (err, data) => {
     const response = {
