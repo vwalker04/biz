@@ -31,11 +31,11 @@ const responseMessage = document.getElementById('js-form-response');
         xhr.onloadend = response => {
             if (response.target.status === 200) {
                 // The form submission was successful
-                console.log("Success")
                 form.reset();
                 addPadding();
                 formResponse.innerHTML = "You're message has been successfully delivered 🎉. We'll be in touch soon!";
                 fadeOut();
+                console.log("Successfully send message. 💪🏾")
             } else {
                 // The form submission failed
                 addPadding();
@@ -52,4 +52,8 @@ function addPadding() {
 
 function fadeOut() {
     setTimeout(() => $(responseMessage).fadeOut(2500), 10000);
+}
+
+function enableButton() {
+    $(`:input[type="submit"]`).prop('disabled', false);
 }
