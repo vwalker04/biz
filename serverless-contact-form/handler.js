@@ -43,19 +43,18 @@ function sendEmail(formData, callback) {
 
 module.exports.staticSiteMailer = async (event, context, callback) => {
   const body = JSON.parse(event.body);
+  console.log("Body after parsing: ", body)
   let verifyResult;
 
-  if (body["g-recaptcha-response"] != null) {
-    try {
-      console.log("Sending recaptcha");
-      verifyResult = await axios.post(reCaptchaUrl, {
-        secret: process.env.RECAPTCHA_SECRET_KEY,
-        response: body["g-recaptcha-response"]
-      })
-      console.log("Finished sending recaptcha");
-    } catch {
-      console.err("reCAPTCHA was unsuccessful.")
-    }
+  if (body["g-recaptcha-response"] == null) {
+    console.log("No captcha supplied")
+  } else {
+    console.log("Sending recaptcha");
+    verifyResult = await axios.post(reCaptchaUrl, {
+      secret: process.env.RECAPTCHA_SECRET_KEY,
+      response: body["g-recaptcha-response"]
+    });
+    console.log("Recaptcha result: ", verifyResult);
   }
 
   // if (verifyResult.status === 200) {

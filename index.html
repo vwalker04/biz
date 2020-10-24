@@ -252,7 +252,7 @@
           <div class="g-recaptcha" data-sitekey="6LemqU0UAAAAAFm_1lZbYFP7oVmIBwdwcl10zhfR" data-callback="cbc">
           </div>
           <br />
-          <button id="submit-btn" type="submit">Send Message</button>
+          <button id="submit-btn" type="submit" disabled>Send Message</button>
           <!-- <button id="submit-btn" type="submit">Send Message</button> -->
         </form>
 
@@ -292,8 +292,7 @@
   <script src="js/main.js"></script>
   <script>
     function cbc(response) {
-      console.log("Response: ", response)
-      alert("callback called with response!")
+      $(`:input[type="submit"]`).prop('disabled', false);
     }
   </script>
 </body>
