@@ -249,7 +249,7 @@
             placeholder="&quot;I'd like a quote for 5,000 2&quot; circle stickers. 2 colors with a matte finish.&quot;"
             required></textarea><br />
 
-          <div class="g-recaptcha" data-sitekey="6LemqU0UAAAAAFm_1lZbYFP7oVmIBwdwcl10zhfR" data-callback=”enableButton”>
+          <div class="g-recaptcha" data-sitekey="6LemqU0UAAAAAFm_1lZbYFP7oVmIBwdwcl10zhfR" data-callback="cbc">
           </div>
           <br />
           <button id="submit-btn" type="submit">Send Message</button>
@@ -291,12 +291,9 @@
 
   <script src="js/main.js"></script>
   <script>
-    document.getElementById('contact-form-id').addEventListener("submit", (event) => {
-      const response = grecaptcha.getResponse();
-      if (response.length === 0) {
-        alert('recaptcha didn\'t work')
-      }
-    });
+    function cbc() {
+      alert("callback called!")
+    }
   </script>
 </body>
 

@@ -47,17 +47,19 @@ module.exports.staticSiteMailer = async (event, context, callback) => {
 
   if (body["g-recaptcha-response"] != null) {
     try {
+      console.log("Sending recaptcha");
       verifyResult = await axios.post(reCaptchaUrl, {
         secret: process.env.RECAPTCHA_SECRET_KEY,
         response: body["g-recaptcha-response"]
       })
+      console.log("Finished sending recaptcha");
     } catch {
       console.err("reCAPTCHA was unsuccessful.")
     }
   }
 
-  if (verifyResult.status === 200) {
-    sendEmail(body, (err, data) => {
+  // if (verifyResult.status === 200) {
+    return sendEmail(body, (err, data) => {
       const response = {
         statusCode: err ? 500 : 200,
         headers: {
@@ -71,8 +73,8 @@ module.exports.staticSiteMailer = async (event, context, callback) => {
         }),
       };
 
-      await callback(null, response);
+      callback(null, response);
     });
-  }
+  // }
 
 };
