@@ -12,8 +12,10 @@ const responseMessage = document.getElementById('js-form-response');
         const formElements = Array.from(form);
         formElements.map(input => (data[input.name] = input.value));
 
+        const dataToSend = JSON.stringify(data);
         // Log what our lambda function will receive
-        console.log(`Data being sent to the API: ${JSON.stringify(data)}`);
+        console.log(`Data being sent to the API: ${dataToSend}`);
+
 
         // Construct HTTP request
         let xhr = new XMLHttpRequest();
@@ -23,7 +25,7 @@ const responseMessage = document.getElementById('js-form-response');
         xhr.withCredentials = false;
 
         // Send collected data as JSON
-        xhr.send(JSON.stringify(data));
+        xhr.send(dataToSend);
 
         // Callback function
         xhr.onloadend = response => {
@@ -37,7 +39,7 @@ const responseMessage = document.getElementById('js-form-response');
             } else {
                 // The form submission failed
                 addPadding();
-                formResponse.innerHTML = "Something went wrong. Please try again later or <a href=\"mailto:contact@avlabels.com\">email us</a>";
+                formResponse.innerHTML = "Oops. Something went wrong. Please try again later or <a href=\"mailto:contact@avlabels.com\">email us</a>";
                 console.error(JSON.parse(response.target.response).message);
             }
         };
@@ -49,9 +51,5 @@ function addPadding() {
 }
 
 function fadeOut() {
-    setTimeout( () => $(responseMessage).fadeOut(2500), 10000);
+    setTimeout(() => $(responseMessage).fadeOut(2500), 10000);
 }
-
-// function enableButton(response) {
-//   document.getElementById('submit-btn').disabled = false;
-// }
