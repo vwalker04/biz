@@ -3,22 +3,36 @@
 const AWS = require('aws-sdk');
 const SES = new AWS.SES();
 const axios = require('axios');
-const reCaptchaUrl = "https://www.google.com/recaptcha/api/siteverify";
 const dotenv = require('dotenv');
 dotenv.config();
 
-function sendEmail(formData, callback) {
-  const emailParams = {
+function sendEmail(formData, context, callback) {
+
+  SES.sendEmail(constructSESEmail(formData), context.done);
+
+  callback(null, {
+    statusCode: 200,
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': 'https://www.avlabels.com',
+      'Access-Control-Allow-Headers': 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
+      'Access-Control-Allow-Credentials': true,
+    },
+  })
+}
+
+function constructSESEmail(formData) {
+  const emailBody = {
     Destination: {
       CcAddresses: [
         // Optional CC Addresses here
       ],
       ToAddresses: [
-        'vaughn@avlabels.com',
-        // 'adam@avlabels.com'
+        `${process.env.VAUGHNS_EMAIL}`,
+        // `${process.env.ADAMS_EMAIL}`
       ]
     },
-    Source: 'contact@avlabels.com', /* required */
+    Source: `${process.env.SOURCE_EMAIL}`, /* required */
     ReplyToAddresses: [formData.reply_to],
     Message: {
       Body: {
@@ -33,47 +47,29 @@ function sendEmail(formData, callback) {
       },
       Subject: {
         Charset: 'UTF-8',
-        Data: '📢 New message from AVLabels.com'
+        Data: '📨 New message from AVLabels.com'
       }
     }
   }
-
-  SES.sendEmail(emailParams, callback);
+  return emailBody;
 }
 
 module.exports.staticSiteMailer = async (event, context, callback) => {
   const body = JSON.parse(event.body);
-  console.log("Body after parsing: ", body)
   let verifyResult;
 
   if (body["g-recaptcha-response"] == null) {
-    console.log("No captcha supplied")
+    console.warn("No reCAPTCHA supplied.")
   } else {
-    console.log("Sending recaptcha");
-    verifyResult = await axios.post(reCaptchaUrl, {
+    verifyResult = await axios.post(process.env.RECAPTCHA_URL, {
       secret: process.env.RECAPTCHA_SECRET_KEY,
       response: body["g-recaptcha-response"]
     });
-    console.log("Recaptcha result: ", verifyResult);
+
+    if (verifyResult.status === 200) {
+      sendEmail(body, context, callback);
+    } else {
+      console.warn("reCAPTCHA failed");
+    }
   }
-
-  // if (verifyResult.status === 200) {
-    return sendEmail(body, (err, data) => {
-      const response = {
-        statusCode: err ? 500 : 200,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'https://www.avlabels.com',
-          'Access-Control-Allow-Headers': 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
-          'Access-Control-Allow-Credentials': true,
-        },
-        body: JSON.stringify({
-          message: err ? err.message : data,
-        }),
-      };
-
-      callback(null, response);
-    });
-  // }
-
 };
