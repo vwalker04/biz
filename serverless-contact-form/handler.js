@@ -29,7 +29,7 @@ function constructSESEmail(formData) {
       ],
       ToAddresses: [
         `${process.env.VAUGHNS_EMAIL}`,
-        // `${process.env.ADAMS_EMAIL}`
+        `${process.env.ADAMS_EMAIL}`
       ]
     },
     Source: `${process.env.SOURCE_EMAIL}`, /* required */
