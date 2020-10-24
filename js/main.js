@@ -16,7 +16,6 @@ const responseMessage = document.getElementById('js-form-response');
         // Log what our lambda function will receive
         console.log(`Data being sent to the API: ${dataToSend}`);
 
-
         // Construct HTTP request
         let xhr = new XMLHttpRequest();
         xhr.open(form.method, form.action, true);
@@ -27,7 +26,7 @@ const responseMessage = document.getElementById('js-form-response');
         // Send collected data as JSON
         xhr.send(dataToSend);
 
-        // Callback function
+        // Callback function. Take the response data from the send() and do something
         xhr.onloadend = response => {
             if (response.target.status === 200) {
                 // The form submission was successful

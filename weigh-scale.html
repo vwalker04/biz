@@ -152,24 +152,27 @@
 
       <div class="contact-form-container">
 
-        <form class="contact-form"
+        <form class="contact-form" id="contact-form-id"
           action="https://o6y770oe24.execute-api.us-east-2.amazonaws.com/dev/static-site-mailer" method="POST">
           <label class="form-label">Name</label>
-          <input class="form-input" type="text" name="name" required><br/>
+          <input class="form-input" type="text" name="name" required><br />
 
           <label class="form-label">Email</label>
-          <input class="form-input" type="email" name="reply_to" required><br/>
+          <input class="form-input" type="email" name="reply_to" required><br />
 
           <label class="form-label">Phone Number</label>
           <input class="form-input" type="tel" name="phone" placeholder="Optional. e.g. 555-555-5555"
-            pattern="[0-9\-]+"><br/>
+            pattern="[0-9\-]+"><br />
 
           <label class="form-label">Message:</label>
           <textarea class="form-input" rows="5" minlength="25" name="message"
             placeholder="&quot;I'd like a quote for 5,000 2&quot; circle stickers. 2 colors with a matte finish.&quot;"
-            required></textarea><br/>
+            required></textarea><br />
 
-          <button id="submit-btn" type="submit">Send Message</button>
+          <div class="g-recaptcha" data-sitekey="6LemqU0UAAAAAFm_1lZbYFP7oVmIBwdwcl10zhfR" data-callback="enableButton"></div>
+          <br />
+
+          <button id="submit-btn" type="submit" disabled>Send Message</button>
         </form>
 
         <p id="js-form-response"></p>
