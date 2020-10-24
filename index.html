@@ -291,8 +291,9 @@
 
   <script src="js/main.js"></script>
   <script>
-    function cbc() {
-      alert("callback called!")
+    function cbc(response) {
+      console.log("Response: ", response)
+      alert("callback called with response!")
     }
   </script>
 </body>
