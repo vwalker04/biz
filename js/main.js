@@ -5,62 +5,46 @@
     form.onsubmit = e => {
         e.preventDefault();
 
-        const requestBody = this.buildRequest(form);
-        
-        let xhr = this.initializeAsyncRequest(form)
-        
-        console.log(`var requestBody: ${requestBody}`)
+        // Prepare data to send
+        const data = {};
+        const formElements = Array.from(form);
+        formElements.map(input => (data[input.name] = input.value));
+
+        const requestBody = JSON.stringify(data);
+        console.log(`Request Body: ${requestBody}`);
+
+        let xhr = initializeAsyncRequest(form.method, form.action)
+
+        // Send collected data as JSON
         xhr.send(requestBody);
 
         // Callback function. Take the response data from the send() and do something
         xhr.onloadend = response => {
             if (response.target.status === 200) {
+                // The form submission was successful
                 form.reset();
-                this.displaySuccess(responseToUser);
-                console.log("Message successfully sent. 💪🏾");
+                addPadding(responseToUser);
+                responseToUser.innerHTML = "Your message has been successfully sent 🎉. We'll be in touch soon!";
+                fadeOut(responseToUser);
+                console.log("Message successfully sent. 💪🏾")
             } else {
-                this.displayFailure(responseToUser);
+                // The form submission failed
+                addPadding(responseToUser);
+                responseToUser.innerHTML = "Oops. Something went wrong. Please try again later or <a href=\"mailto:contact@avlabels.com\">email us</a>";
                 console.error(JSON.parse(response.target.response).message);
             }
         };
     };
 })();
 
-function buildRequest(form) {
-    console.log("in buildRequest")
-    const data = {};
-    const formElements = Array.from(form);
-    formElements.map(input => (data[input.name] = input.value));
-    let body = JSON.stringify(data);
-    console.log(`buildRequest body: ${body}`)
-    return body;
-}
-
-// function getMapFromForm(form) {
-//     const data = {};
-//     const formElements = Array.from(form);
-//     formElements.map(input => (data[input.name] = input.value));
-//     return data;
-// }
-
-function initializeAsyncRequest(form) {
+function initializeAsyncRequest(method, url) {
     let xhr = new XMLHttpRequest();
-    xhr.open(form.method, form.url, true);
+    xhr.open(method, url, true);
     xhr.setRequestHeader('Accept', 'application/json');
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.withCredentials = false;
+
     return xhr;
-}
-
-function displaySuccess(element) {
-    this.addPadding(element);
-    element.innerHTML = "Your message has been successfully sent 🎉. We'll be in touch soon!";
-    this.fadeOut(element);
-}
-
-function displayFailure(element) {
-    this.addPadding(element);
-    element.innerHTML = "Oops. Something went wrong. Please try again later or <a href=\"mailto:contact@avlabels.com\">email us</a>";
 }
 
 function addPadding(element) {
@@ -74,4 +58,3 @@ function fadeOut(element) {
 function enableButton() {
     $(`:input[type="submit"]`).prop('disabled', false);
 }
-
