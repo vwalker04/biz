@@ -6,9 +6,10 @@
         e.preventDefault();
 
         const requestBody = this.buildRequest(form);
-
+        
         let xhr = this.initializeAsyncRequest(form)
-
+        
+        console.log(`var requestBody: ${requestBody}`)
         xhr.send(requestBody);
 
         // Callback function. Take the response data from the send() and do something
