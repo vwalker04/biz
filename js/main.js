@@ -11,15 +11,9 @@
         formElements.map(input => (data[input.name] = input.value));
 
         const requestBody = JSON.stringify(data);
-        // Log what our lambda function will receive
-        console.log(`Data being sent to the API: ${requestBody}`);
+        console.log(`Request Body: ${requestBody}`);
 
-        // Construct HTTP request
-        let xhr = new XMLHttpRequest();
-        xhr.open(form.method, form.action, true);
-        xhr.setRequestHeader('Accept', 'application/json');
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.withCredentials = false;
+        let xhr = initializeAsyncRequest(form.method, form.action)
 
         // Send collected data as JSON
         xhr.send(requestBody);
@@ -30,9 +24,9 @@
                 // The form submission was successful
                 form.reset();
                 addPadding(responseToUser);
-                responseToUser.innerHTML = "You're message has been successfully delivered 🎉. We'll be in touch soon!";
+                responseToUser.innerHTML = "Your message has been successfully sent 🎉. We'll be in touch soon!";
                 fadeOut(responseToUser);
-                console.log("Successfully send message. 💪🏾")
+                console.log("Message successfully sent. 💪🏾")
             } else {
                 // The form submission failed
                 addPadding(responseToUser);
@@ -42,6 +36,16 @@
         };
     };
 })();
+
+function initializeAsyncRequest(method, url) {
+    let xhr = new XMLHttpRequest();
+    xhr.open(method, url, true);
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.withCredentials = false;
+
+    return xhr;
+}
 
 function addPadding(element) {
     element.setAttribute('style', 'padding: 20px');
@@ -54,3 +58,4 @@ function fadeOut(element) {
 function enableButton() {
     $(`:input[type="submit"]`).prop('disabled', false);
 }
+

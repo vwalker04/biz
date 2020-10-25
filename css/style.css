@@ -350,10 +350,5 @@ html, body {
   .contact-form-container {
     text-align: center;
     width: auto;
-  } */
-  /* .contact-form {
-    display: grid;
-    grid-template-columns: 110px 1fr;
-    grid-gap: 5px;
-  }
+  } 
 }
