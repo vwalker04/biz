@@ -9,18 +9,15 @@
 
         let xhr = initializeAsyncRequest(form.method, form.action)
 
-        // Send collected data as JSON
         xhr.send(requestBody);
 
         // Callback function. Take the response data from the send() and do something
         xhr.onloadend = response => {
             if (response.target.status === 200) {
-                // The form submission was successful
                 form.reset();
                 displaySuccess(responseToUser)
                 console.log("Message successfully sent. 💪🏾")
             } else {
-                // The form submission failed
                 displayFailure(responseToUser);
                 console.error(JSON.parse(response.target.response).message);
             }
