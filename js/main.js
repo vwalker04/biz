@@ -15,10 +15,10 @@
         xhr.onloadend = response => {
             if (response.target.status === 200) {
                 form.reset();
-                displaySuccess(responseToUser);
+                this.displaySuccess(responseToUser);
                 console.log("Message successfully sent. 💪🏾");
             } else {
-                displayFailure(responseToUser);
+                this.displayFailure(responseToUser);
                 console.error(JSON.parse(response.target.response).message);
             }
         };
@@ -46,13 +46,13 @@ function initializeAsyncRequest(form) {
 }
 
 function displaySuccess(element) {
-    addPadding(element);
+    this.addPadding(element);
     element.innerHTML = "Your message has been successfully sent 🎉. We'll be in touch soon!";
-    fadeOut(element);
+    this.fadeOut(element);
 }
 
 function displayFailure(element) {
-    addPadding(element);
+    this.addPadding(element);
     element.innerHTML = "Oops. Something went wrong. Please try again later or <a href=\"mailto:contact@avlabels.com\">email us</a>";
 }
 
