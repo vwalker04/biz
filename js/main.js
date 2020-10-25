@@ -5,15 +5,10 @@
     form.onsubmit = e => {
         e.preventDefault();
 
-        // Prepare data to send
-        const data = {};
-        const formElements = Array.from(form);
-        formElements.map(input => (data[input.name] = input.value));
-
-        const requestBody = JSON.stringify(data);
+        const requestBody = createRequestBody(form);
         console.log(`Request Body: ${requestBody}`);
 
-        let xhr = initializeAsyncRequest(form)
+        let xhr = initializeAsyncRequest(form.method, form.url);
 
         // Send collected data as JSON
         xhr.send(requestBody);
@@ -37,9 +32,17 @@
     };
 })();
 
-function initializeAsyncRequest(form) {
+function createRequestBody(form) {
+    const data = {};
+    const formElements = Array.from(form);
+    formElements.map(input => (data[input.name] = input.value));
+
+    return JSON.stringify(data);
+}
+
+function initializeAsyncRequest(method, url) {
     let xhr = new XMLHttpRequest();
-    xhr.open(form.method, form.url, true);
+    xhr.open(method, url, true);
     xhr.setRequestHeader('Accept', 'application/json');
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.withCredentials = false;
