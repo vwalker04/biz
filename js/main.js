@@ -26,7 +26,8 @@
 })();
 
 function buildRequest(form) {
-    return JSON.stringify(getMapFromForm(form));
+    let data = this.getMapFromForm(form);
+    return JSON.stringify(data);
 }
 
 function getMapFromForm(form) {
