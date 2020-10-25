@@ -26,16 +26,21 @@
 })();
 
 function buildRequest(form) {
-    let data = this.getMapFromForm(form);
-    return JSON.stringify(data);
-}
-
-function getMapFromForm(form) {
+    console.log("in buildRequest")
     const data = {};
     const formElements = Array.from(form);
     formElements.map(input => (data[input.name] = input.value));
-    return data;
+    let body = JSON.stringify(data);
+    console.log(`Request body: ${body}`)
+    return body;
 }
+
+// function getMapFromForm(form) {
+//     const data = {};
+//     const formElements = Array.from(form);
+//     formElements.map(input => (data[input.name] = input.value));
+//     return data;
+// }
 
 function initializeAsyncRequest(form) {
     let xhr = new XMLHttpRequest();
