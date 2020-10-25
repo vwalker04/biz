@@ -151,7 +151,7 @@ html, body {
 
 .contact-form-container {
   text-align: center;
-  width: 50%;
+  width: 60%;
   padding-top: 20px;
   margin: auto;
 }
@@ -323,6 +323,9 @@ html, body {
     margin-left: auto;
     margin-right: auto;
   }
+  .contact-form-container {
+    width: auto;
+  }
 
 }
 @media only screen and (max-width: 376px) {
@@ -347,8 +350,8 @@ html, body {
   .contact-form-container {
     text-align: center;
     width: auto;
-  }
-  .contact-form {
+  } */
+  /* .contact-form {
     display: grid;
     grid-template-columns: 110px 1fr;
     grid-gap: 5px;
