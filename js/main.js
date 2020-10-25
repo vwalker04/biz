@@ -17,14 +17,11 @@
             if (response.target.status === 200) {
                 // The form submission was successful
                 form.reset();
-                addPadding(responseToUser);
-                responseToUser.innerHTML = "Your message has been successfully sent 🎉. We'll be in touch soon!";
-                fadeOut(responseToUser);
+                displaySuccess(responseToUser)
                 console.log("Message successfully sent. 💪🏾")
             } else {
                 // The form submission failed
-                addPadding(responseToUser);
-                responseToUser.innerHTML = "Oops. Something went wrong. Please try again later or <a href=\"mailto:contact@avlabels.com\">email us</a>";
+                displayFailure(responseToUser);
                 console.error(JSON.parse(response.target.response).message);
             }
         };
@@ -47,6 +44,17 @@ function initializeAsyncRequest(method, url) {
     xhr.withCredentials = false;
 
     return xhr;
+}
+
+function displaySuccess(responseToUser) {
+    addPadding(responseToUser);
+    responseToUser.innerHTML = "Your message has been successfully sent 🎉. We'll be in touch soon!";
+    fadeOut(responseToUser);
+}
+
+function displayFailure(responseToUser) {
+    addPadding(responseToUser);
+    responseToUser.innerHTML = "Oops. Something went wrong. Please try again later or <a href=\"mailto:contact@avlabels.com\">email us</a>";
 }
 
 function addPadding(element) {
