@@ -1,8 +1,6 @@
-const responseMessage = document.getElementById('js-form-response');
-
 (() => {
     const form = document.querySelector('form');
-    const formResponse = document.getElementById('js-form-response');
+    const responseToUser = document.getElementById('js-form-response');
 
     form.onsubmit = e => {
         e.preventDefault();
@@ -12,9 +10,9 @@ const responseMessage = document.getElementById('js-form-response');
         const formElements = Array.from(form);
         formElements.map(input => (data[input.name] = input.value));
 
-        const dataToSend = JSON.stringify(data);
+        const requestBody = JSON.stringify(data);
         // Log what our lambda function will receive
-        console.log(`Data being sent to the API: ${dataToSend}`);
+        console.log(`Data being sent to the API: ${requestBody}`);
 
         // Construct HTTP request
         let xhr = new XMLHttpRequest();
@@ -24,33 +22,33 @@ const responseMessage = document.getElementById('js-form-response');
         xhr.withCredentials = false;
 
         // Send collected data as JSON
-        xhr.send(dataToSend);
+        xhr.send(requestBody);
 
         // Callback function. Take the response data from the send() and do something
         xhr.onloadend = response => {
             if (response.target.status === 200) {
                 // The form submission was successful
                 form.reset();
-                addPadding();
-                formResponse.innerHTML = "You're message has been successfully delivered 🎉. We'll be in touch soon!";
-                fadeOut();
+                addPadding(responseToUser);
+                responseToUser.innerHTML = "You're message has been successfully delivered 🎉. We'll be in touch soon!";
+                fadeOut(responseToUser);
                 console.log("Successfully send message. 💪🏾")
             } else {
                 // The form submission failed
-                addPadding();
-                formResponse.innerHTML = "Oops. Something went wrong. Please try again later or <a href=\"mailto:contact@avlabels.com\">email us</a>";
+                addPadding(responseToUser);
+                responseToUser.innerHTML = "Oops. Something went wrong. Please try again later or <a href=\"mailto:contact@avlabels.com\">email us</a>";
                 console.error(JSON.parse(response.target.response).message);
             }
         };
     };
 })();
 
-function addPadding() {
-    responseMessage.setAttribute('style', 'padding: 20px');
+function addPadding(element) {
+    element.setAttribute('style', 'padding: 20px');
 }
 
-function fadeOut() {
-    setTimeout(() => $(responseMessage).fadeOut(2500), 10000);
+function fadeOut(element) {
+    setTimeout(() => $(element).fadeOut(2500), 10000);
 }
 
 function enableButton() {
