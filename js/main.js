@@ -13,7 +13,7 @@
         const requestBody = JSON.stringify(data);
         console.log(`Request Body: ${requestBody}`);
 
-        let xhr = initializeAsyncRequest(form.method, form.action)
+        let xhr = initializeAsyncRequest(form)
 
         // Send collected data as JSON
         xhr.send(requestBody);
@@ -37,9 +37,9 @@
     };
 })();
 
-function initializeAsyncRequest(method, url) {
+function initializeAsyncRequest(form) {
     let xhr = new XMLHttpRequest();
-    xhr.open(method, url, true);
+    xhr.open(form.method, form.url, true);
     xhr.setRequestHeader('Accept', 'application/json');
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.withCredentials = false;
