@@ -6,9 +6,8 @@
         e.preventDefault();
 
         const requestBody = buildRequest(form);
-        console.log(`Request Body: ${requestBody}`);
 
-        let xhr = initializeAsyncRequest(form.method, form.action)
+        let xhr = initializeAsyncRequest(form)
 
         xhr.send(requestBody);
 
@@ -16,39 +15,45 @@
         xhr.onloadend = response => {
             if (response.target.status === 200) {
                 form.reset();
-                addPadding(responseToUser);
-                responseToUser.innerHTML = "Your message has been successfully sent 🎉. We'll be in touch soon!";
-                fadeOut(responseToUser);
-                console.log("Message successfully sent. 💪🏾")
+                displaySuccess(responseToUser);
+                console.log("Message successfully sent. 💪🏾");
             } else {
-                addPadding(responseToUser);
-                responseToUser.innerHTML = "Oops. Something went wrong. Please try again later or <a href=\"mailto:contact@avlabels.com\">email us</a>";
+                displayFailure(responseToUser);
                 console.error(JSON.parse(response.target.response).message);
             }
         };
     };
 })();
 
-function initializeAsyncRequest(method, url) {
-    let xhr = new XMLHttpRequest();
-    xhr.open(method, url, true);
-    xhr.setRequestHeader('Accept', 'application/json');
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.withCredentials = false;
-
-    return xhr;
-}
-
 function buildRequest(form) {
-    const formData = createMapfromFormData(form);
-    return JSON.stringify(formData);
+    return JSON.stringify(getMapFromForm(form));
 }
 
-function createMapfromFormData(form) {
+function getMapFromForm(form) {
     const data = {};
     const formElements = Array.from(form);
     formElements.map(input => (data[input.name] = input.value));
     return data;
+}
+
+function initializeAsyncRequest(form) {
+    let xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.url, true);
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.withCredentials = false;
+    return xhr;
+}
+
+function displaySuccess(element) {
+    addPadding(element);
+    element.innerHTML = "Your message has been successfully sent 🎉. We'll be in touch soon!";
+    fadeOut(element);
+}
+
+function displayFailure(element) {
+    addPadding(element);
+    element.innerHTML = "Oops. Something went wrong. Please try again later or <a href=\"mailto:contact@avlabels.com\">email us</a>";
 }
 
 function addPadding(element) {
