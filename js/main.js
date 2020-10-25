@@ -5,9 +5,9 @@
     form.onsubmit = e => {
         e.preventDefault();
 
-        const requestBody = buildRequest(form);
+        const requestBody = this.buildRequest(form);
 
-        let xhr = initializeAsyncRequest(form)
+        let xhr = this.initializeAsyncRequest(form)
 
         xhr.send(requestBody);
 
@@ -31,7 +31,7 @@ function buildRequest(form) {
     const formElements = Array.from(form);
     formElements.map(input => (data[input.name] = input.value));
     let body = JSON.stringify(data);
-    console.log(`Request body: ${body}`)
+    console.log(`buildRequest body: ${body}`)
     return body;
 }
 
