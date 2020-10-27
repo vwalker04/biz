@@ -3,8 +3,11 @@
 const AWS = require('aws-sdk');
 const SES = new AWS.SES();
 const axios = require('axios');
-const dotenv = require('dotenv');
-dotenv.config();
+
+const reCaptchaUrl = "https://www.google.com/recaptcha/api/siteverify";
+const adamsEmail = "vwalker04@yahoo.com";
+const vaughnEmail = "vaughn@avlabels.com";
+const sourceEmail = "contact@avlabels.com";
 
 function sendEmail(formData, context, callback) {
 
@@ -28,11 +31,11 @@ function constructSESEmail(formData) {
         // Optional CC Addresses here
       ],
       ToAddresses: [
-        `${process.env.VAUGHNS_EMAIL}`,
-        `${process.env.ADAMS_EMAIL}`
+        `${vaughnEmail}`,
+        `${adamsEmail}`
       ]
     },
-    Source: `${process.env.SOURCE_EMAIL}`, /* required */
+    Source: `${sourceEmail}`,
     ReplyToAddresses: [formData.reply_to],
     Message: {
       Body: {
@@ -61,7 +64,7 @@ module.exports.staticSiteMailer = async (event, context, callback) => {
   if (body["g-recaptcha-response"] == null) {
     console.warn("No reCAPTCHA supplied.")
   } else {
-    verifyResult = await axios.post(process.env.RECAPTCHA_URL, {
+    verifyResult = await axios.post(reCaptchaUrl, {
       secret: process.env.RECAPTCHA_SECRET_KEY,
       response: body["g-recaptcha-response"]
     });
