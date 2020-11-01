@@ -4,14 +4,10 @@ const responseToUser = document.getElementById('js-form-response');
 form.onsubmit = e => {
     e.preventDefault();
 
-    postData(form.action, form).then( (response) => {
-        if (response.ok) {
-            form.reset();
-            displaySuccess(responseToUser);
-        } else {
-            displayFailure(responseToUser);
-        console.error(JSON.parse(err.message));
-        }
+    postData(form.action, form).then( response => {
+        console.log("response: ", response);
+        form.reset();
+        displaySuccess(responseToUser);
     });
 };
 
