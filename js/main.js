@@ -1,3 +1,5 @@
+const { reject } = require("bluebird");
+
 const form = document.querySelector('form');
 const responseToUser = document.getElementById('js-form-response');
 
@@ -10,8 +12,10 @@ form.onsubmit = e => {
             displaySuccess(responseToUser);
         } else {
             displayFailure(responseToUser);
-            console.error(JSON.parse(err.message));
+            reject(err);
         }
+    }).catch( err => {
+        console.error(JSON.parse(err.message));
     });
 };
 
