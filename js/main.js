@@ -5,14 +5,14 @@ form.onsubmit = e => {
     e.preventDefault();
 
     postData(form.action, form).then( (response) => {
-        if(response.ok) {
+        if (response.ok) {
             form.reset();
             displaySuccess(responseToUser);
-        }
-    }).catch( err => {
-        displayFailure(responseToUser);
+        } else {
+            displayFailure(responseToUser);
         console.error(JSON.parse(err.message));
-    })
+        }
+    });
 };
 
 async function postData(url, form) {
