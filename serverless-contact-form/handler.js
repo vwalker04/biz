@@ -4,6 +4,7 @@ const axios = require('axios');
 const reCaptchaUrl = "https://www.google.com/recaptcha/api/siteverify";
 
 module.exports.staticSiteMailer = async (event, context, callback) => {
+
   const body = JSON.parse(event.body);
   let verifyResult;
 
@@ -18,7 +19,7 @@ module.exports.staticSiteMailer = async (event, context, callback) => {
     if (verifyResult.status === 200) {
       AWSEmailService.sendEmail(body, context);
 
-      callback(null, {
+      const response = {
         statusCode: 200,
         headers: {
           'Content-Type': 'application/json',
@@ -26,7 +27,10 @@ module.exports.staticSiteMailer = async (event, context, callback) => {
           'Access-Control-Allow-Headers': 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
           'Access-Control-Allow-Credentials': true,
         },
-      })
+        body: JSON.stringify({ message: 'Success from server 🎉'})
+      };
+
+      callback(null, response);
     } else {
       console.warn("reCAPTCHA failed");
     }
