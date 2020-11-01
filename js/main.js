@@ -1,29 +1,47 @@
-(() => {
-    const form = document.querySelector('form');
-    const responseToUser = document.getElementById('js-form-response');
+const form = document.querySelector('form');
+const responseToUser = document.getElementById('js-form-response');
 
-    form.onsubmit = e => {
-        e.preventDefault();
+form.onsubmit = e => {
+    e.preventDefault();
 
-        const requestBody = createRequest(form);
+    postData(form.action, form).then( data => {
+        console.log("Data ", data);
+        form.reset();
+        displaySuccess(responseToUser);
+    })
+    // let xhr = initializeAsyncRequest(form.method, form.action)
 
-        let xhr = initializeAsyncRequest(form.method, form.action)
+    // xhr.send(requestBody);
 
-        xhr.send(requestBody);
+    // // Callback function. Take the response data from the send() and do something
+    // xhr.onloadend = response => {
+    //     if (response.target.status === 200) {
+    //         form.reset();
+    //         displaySuccess(responseToUser)
+    //         console.log("Message successfully sent. 💪🏾")
+    //     } else {
+    //         displayFailure(responseToUser);
+    //         console.error(JSON.parse(response.target.response).message);
+    //     }
+    // };
+};
 
-        // Callback function. Take the response data from the send() and do something
-        xhr.onloadend = response => {
-            if (response.target.status === 200) {
-                form.reset();
-                displaySuccess(responseToUser)
-                console.log("Message successfully sent. 💪🏾")
-            } else {
-                displayFailure(responseToUser);
-                console.error(JSON.parse(response.target.response).message);
-            }
-        };
-    };
-})();
+async function postData(url, form) {
+    const data = createRequest(form);
+    const response = await fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'omit',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        redirect: 'follow',
+        body: data
+    })
+    return response.json();
+}
+
 
 function createRequest(form) {
     const data = {};
