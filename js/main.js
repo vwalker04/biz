@@ -1,22 +1,16 @@
-const { reject } = require("bluebird");
-
 const form = document.querySelector('form');
 const responseToUser = document.getElementById('js-form-response');
 
 form.onsubmit = e => {
     e.preventDefault();
 
-    postData(form.action, form).then( (response, err) => {
-        if (response.ok) {
-            form.reset();
-            displaySuccess(responseToUser);
-        } else {
-            displayFailure(responseToUser);
-            reject(err);
-        }
+    postData(form.action, form).then( () => {
+        form.reset();
+        displaySuccess(responseToUser);
     }).catch( err => {
+        displayFailure(responseToUser);
         console.error(JSON.parse(err.message));
-    });
+    })
 };
 
 async function postData(url, form) {
