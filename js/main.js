@@ -4,13 +4,15 @@ const responseToUser = document.getElementById('js-form-response');
 form.onsubmit = e => {
     e.preventDefault();
 
-    postData(form.action, form).then( () => {
-        form.reset();
-        displaySuccess(responseToUser);
-    }).catch( err => {
-        displayFailure(responseToUser);
+    postData(form.action, form).then( (response) => {
+        if (response.ok) {
+            form.reset();
+            displaySuccess(responseToUser);
+        } else {
+            displayFailure(responseToUser);
         console.error(JSON.parse(err.message));
-    })
+        }
+    });
 };
 
 async function postData(url, form) {
@@ -34,16 +36,6 @@ function createRequest(form) {
     formElements.map(input => (data[input.name] = input.value));
 
     return JSON.stringify(data);
-}
-
-function initializeAsyncRequest(method, url) {
-    let xhr = new XMLHttpRequest();
-    xhr.open(method, url, true);
-    xhr.setRequestHeader('Accept', 'application/json');
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.withCredentials = false;
-
-    return xhr;
 }
 
 function displaySuccess(responseToUser) {

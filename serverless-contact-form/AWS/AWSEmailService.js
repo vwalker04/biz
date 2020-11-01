@@ -12,7 +12,7 @@ function createSESRequest(data) {
           ],
           ToAddresses: [
             `${vaughnEmail}`,
-            `${adamsEmail}`
+            // `${adamsEmail}`
           ]
         },
         Source: `${sourceEmail}`,
