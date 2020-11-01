@@ -5,7 +5,8 @@ form.onsubmit = e => {
     e.preventDefault();
 
     postData(form.action, form).then( (response) => {
-        if(response.body.statusCode === 200) {
+        console.log(`Response: ${response}`)
+        if(response.status === 200) {
             form.reset();
             displaySuccess(responseToUser);
         } else {
