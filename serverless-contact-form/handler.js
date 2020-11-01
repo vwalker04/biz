@@ -16,10 +16,11 @@ module.exports.staticSiteMailer = async (event, context, callback) => {
       response: body["g-recaptcha-response"]
     });
 
+    const response;
     if (verifyResult.status === 200) {
       AWSEmailService.sendEmail(body, context);
 
-      const response = {
+      response = {
         statusCode: 200,
         headers: {
           'Content-Type': 'application/json',
@@ -35,7 +36,18 @@ module.exports.staticSiteMailer = async (event, context, callback) => {
 
       callback(null, response);
     } else {
-      console.warn("reCAPTCHA failed");
+      response = {
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'https://www.avlabels.com',
+          'Access-Control-Allow-Headers': 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
+          'Access-Control-Allow-Credentials': true,
+        },
+        body: JSON.stringify({ 
+          message: 'reCAPTCHA failed.',
+          statusCode: 500
+        })
+      };
     }
   }
 };

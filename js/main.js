@@ -11,7 +11,7 @@ form.onsubmit = e => {
             displaySuccess(responseToUser);
         } else {
             displayFailure(responseToUser);
-            console.error("Something went wrong communicating with AWS.")
+            console.error("Something went wrong.", response.message)
         }
     });
 };
