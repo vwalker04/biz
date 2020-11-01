@@ -27,7 +27,10 @@ module.exports.staticSiteMailer = async (event, context, callback) => {
           'Access-Control-Allow-Headers': 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
           'Access-Control-Allow-Credentials': true,
         },
-        body: JSON.stringify({ message: 'Success from server 🎉'})
+        body: JSON.stringify({ 
+          message: 'Success from server 🎉',
+          statusCode: 200
+        })
       };
 
       callback(null, response);

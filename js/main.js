@@ -6,8 +6,13 @@ form.onsubmit = e => {
 
     postData(form.action, form).then( response => {
         console.log("response: ", response);
-        form.reset();
-        displaySuccess(responseToUser);
+        if (response.statusCode === 200){
+            form.reset();
+            displaySuccess(responseToUser);
+        } else {
+            displayFailure(responseToUser);
+            console.error("Something went wrong communicating with AWS.")
+        }
     });
 };
 
