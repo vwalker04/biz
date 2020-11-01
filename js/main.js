@@ -5,14 +5,13 @@ form.onsubmit = e => {
     e.preventDefault();
 
     postData(form.action, form).then( (response) => {
-        console.log(`Response: ${response}`)
-        if(response.status === 200) {
+        if(response.ok) {
             form.reset();
             displaySuccess(responseToUser);
-        } else {
-            displayFailure(responseToUser);
-            console.error(JSON.parse(err.message));
         }
+    }).catch( err => {
+        displayFailure(responseToUser);
+        console.error(JSON.parse(err.message));
     })
 };
 
