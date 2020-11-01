@@ -1,6 +1,6 @@
 const AWSClient = require('./AWSEmailClient');
 
-const adamsEmail = "vwalker04@yahoo.com";
+const adamsEmail = "adam@avlabels.com";
 const vaughnEmail = "vaughn@avlabels.com";
 const sourceEmail = "contact@avlabels.com";
 
@@ -12,7 +12,7 @@ function createSESRequest(data) {
           ],
           ToAddresses: [
             `${vaughnEmail}`,
-            `${adamsEmail}`
+            // `${adamsEmail}`
           ]
         },
         Source: `${sourceEmail}`,
