@@ -4,12 +4,14 @@ const responseToUser = document.getElementById('js-form-response');
 form.onsubmit = e => {
     e.preventDefault();
 
-    postData(form.action, form).then( () => {
-        form.reset();
-        displaySuccess(responseToUser);
-    }).catch( err => {
-        displayFailure(responseToUser);
-        console.error(JSON.parse(err.message));
+    postData(form.action, form).then( (response) => {
+        if(response.body.statusCode === 200) {
+            form.reset();
+            displaySuccess(responseToUser);
+        } else {
+            displayFailure(responseToUser);
+            console.error(JSON.parse(err.message));
+        }
     })
 };
 
