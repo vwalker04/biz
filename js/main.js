@@ -15,7 +15,7 @@ form.onsubmit = e => {
         //     console.error("Something went wrong.", response.message)
         // }
     }).catch( err => {
-        console.error("ERROR: ", JSON.parse(err))
+        console.error(err)
     });
 };
 
