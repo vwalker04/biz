@@ -10,10 +10,10 @@ form.onsubmit = e => {
             form.reset();
             displaySuccess(responseToUser);
         }
-        //  else {
-        //     displayFailure(responseToUser);
-        //     console.error("Something went wrong.", response.message)
-        // }
+         else {
+            displayFailure(responseToUser);
+            console.error("Something went wrong.", response.message)
+        }
     }).catch( err => {
         console.error(err)
     });
