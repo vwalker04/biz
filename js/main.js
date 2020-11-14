@@ -42,14 +42,23 @@ function createRequest(form) {
 }
 
 function displaySuccess(responseToUser) {
+    scrollDown();
     addPadding(responseToUser);
     responseToUser.innerHTML = "Your message has been successfully sent 🎉. We'll be in touch soon!";
     fadeOut(responseToUser);
 }
 
 function displayFailure(responseToUser) {
+    scrollDown();
     addPadding(responseToUser);
     responseToUser.innerHTML = "Oops. Something went wrong. Please try again later or <a href=\"mailto:contact@avlabels.com\">email us</a>";
+}
+
+function scrollDown() {
+    window.scrollBy({
+        top: 100,
+        behavior: "smooth"
+    });
 }
 
 function addPadding(element) {
