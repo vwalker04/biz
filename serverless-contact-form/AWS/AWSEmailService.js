@@ -1,10 +1,6 @@
 const AWS = require('aws-sdk');
 const SES = new AWS.SES();
 
-const adamsEmail = "adam@avlabels.com";
-const vaughnEmail = "vaughn@avlabels.com";
-const sourceEmail = "contact@avlabels.com";
-
 function createSESRequest(data) {
     return {
           Destination: {
@@ -12,11 +8,11 @@ function createSESRequest(data) {
                   // Optional CC Addresses here
               ],
               ToAddresses: [
-                  `${vaughnEmail}`,
-                  // `${adamsEmail}`
+                  `${process.env.VAUGHNS_EMAIL}`,
+                  `${process.env.ADAMS_EMAIL}`
               ]
           },
-          Source: `${sourceEmail}`,
+          Source: `${process.env.CONTACT_EMAIL}`,
           ReplyToAddresses: [data.reply_to],
           Message: {
               Body: {
