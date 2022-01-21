@@ -19,7 +19,7 @@ form.onsubmit = e => {
 };
 
 async function postData(url, form) {
-    const data = createRequest(form);
+    const data = buildRequest(form);
     const response = await fetch(url, {
         method: 'POST',
         mode: 'cors',
@@ -33,7 +33,7 @@ async function postData(url, form) {
     return response.json();
 }
 
-function createRequest(form) {
+function buildRequest(form) {
     const data = {};
     const formElements = Array.from(form);
     formElements.map(input => (data[input.name] = input.value));
@@ -66,6 +66,7 @@ function addPadding(element) {
 }
 
 function fadeOut(element) {
+    // TODO: Please remove me in favor for css.
     setTimeout(() => $(element).fadeOut(2500), 10000);
 }
 
