@@ -31,7 +31,7 @@ function createSESRequest(data) {
             },
             Subject: {
                 Charset: 'UTF-8',
-                Data: '📨 New message from AVLabels.com'
+                Data: `📨 from ${data.name} | AVLabels website`
             }
         }
     };
