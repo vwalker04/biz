@@ -13,4 +13,6 @@ When running the following commands, make sure you're in the `serverless-contact
 
 Deploy: `npm run deploy` or `yarn sls deploy --verbose`
 
+**Note**: Ensure you deploy when you make changes to files within the `serverless-contact-form` directory. Look to automate this step in CI.
+
 Test locally: `yarn sls invoke local --function staticSiteMailer --path data.json`
