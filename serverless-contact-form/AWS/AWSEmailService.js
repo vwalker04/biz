@@ -12,7 +12,7 @@ function createSESRequest(data) {
                 // `${process.env.ADAM_PERSONAL_EMAIL}`
             ],
             ToAddresses: [
-                `${process.env.ADAMS_EMAIL}`,
+                // `${process.env.ADAMS_EMAIL}`,
                 `${process.env.VAUGHNS_EMAIL}`
             ]
         },
