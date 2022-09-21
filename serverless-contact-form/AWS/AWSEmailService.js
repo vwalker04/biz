@@ -2,9 +2,9 @@ const AWS = require('aws-sdk');
 const SES = new AWS.SES();
 
 function createSESRequest(data) {
-    console.log(`Sending email to ${process.env.ADAMS_EMAIL} and ${process.env.VAUGHNS_EMAIL} with data`, data);
+    console.info(`Sending email to ${process.env.ADAMS_EMAIL} and ${process.env.VAUGHNS_EMAIL} with data`, data);
 
-    return {
+    const request = {
         Destination: {
             CcAddresses: [
                 // Optional CC Addresses here
@@ -12,7 +12,7 @@ function createSESRequest(data) {
                 // `${process.env.ADAM_PERSONAL_EMAIL}`
             ],
             ToAddresses: [
-                // `${process.env.ADAMS_EMAIL}`,
+                `${process.env.ADAMS_EMAIL}`,
                 `${process.env.VAUGHNS_EMAIL}`
             ]
         },
@@ -35,6 +35,8 @@ function createSESRequest(data) {
             }
         }
     };
+    console.info(`Request: ${request}`);
+    return request;
 }
 
 module.exports.sendEmail = (data, context) => {
