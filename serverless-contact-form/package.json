@@ -12,6 +12,6 @@
     "aws-sdk": "^2.814.0",
     "axios": "^0.21.2",
     "dotenv": "^8.2.0",
-    "serverless": "^2.72.2"
+    "serverless": "^3.27.0"
   }
 }
