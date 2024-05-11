@@ -18,8 +18,5 @@
     "esbuild": "^0.21.1",
     "tsx": "^4.10.0",
     "typescript": "^5.4.5"
-  },
-  "dependencies": {
-    "aws-amplify": "^6.3.0"
   }
 }
