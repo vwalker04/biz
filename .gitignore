@@ -7,3 +7,8 @@ jspm_packages
 
 #IntelliJ
 .idea/*
+
+# amplify
+.amplify
+amplify_outputs*
+amplifyconfiguration*
