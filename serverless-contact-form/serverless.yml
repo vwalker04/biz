@@ -1,3 +1,5 @@
+org: fillerorgname
+app: static-site-mailer
 service: static-site-mailer
 
 frameworkVersion: '2'

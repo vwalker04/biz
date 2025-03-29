@@ -6,12 +6,14 @@
   "author": "Vaughn Walker",
   "license": "MIT",
   "scripts": {
-    "deploy": "yarn sls deploy -v"
+    "deploy": "serverless deploy -v"
   },
   "dependencies": {
     "aws-sdk": "^2.814.0",
-    "axios": "^0.21.2",
-    "dotenv": "^8.2.0",
-    "serverless": "^2.72.2"
+    "axios": "^1.8.4",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "serverless": "^2.72.4"
   }
 }

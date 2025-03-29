@@ -19,26 +19,42 @@ function buildResponse(message, statusCode) {
 }
 
 module.exports.staticSiteMailer = async (event, context, callback) => {
-
-  const body = JSON.parse(event.body);
-  let verifyResult;
-
-  if (body["g-recaptcha-response"] == null) {
-    console.error("reCAPTCHA was null");
-  } else {
-    verifyResult = await axios.post(reCaptchaUrl, {
+  try {
+    // Parse request body
+    const body = JSON.parse(event.body);
+    
+    // Validate required fields
+    if (body.name === undefined || body.message === undefined) {
+      return buildResponse("Bad request: missing required fields 🤖", 400);
+    }
+    
+    // Validate reCAPTCHA
+    if (!body["g-recaptcha-response"]) {
+      console.error("reCAPTCHA token missing");
+      return buildResponse("reCAPTCHA verification required", 400);
+    }
+    
+    // Verify reCAPTCHA token
+    const verifyResult = await axios.post(reCaptchaUrl, {
       secret: process.env.RECAPTCHA_SECRET_KEY,
       response: body["g-recaptcha-response"]
     });
-
-    if (verifyResult.status === 200) {
-      if (!body.message) { // TODO: Add other validation here.
-        callback(null, buildResponse("Bad request 🤖", 400));
-      }
-      AWSEmailService.sendEmail(body, context);
-      callback(null, buildResponse("Success 🙌🏾", 200))
-    } else {
-      callback(null, buildResponse("reCAPTCHA failed to authenticate. 💀", 500));
+    
+    // Check reCAPTCHA verification result
+    if (verifyResult.data.success !== true) {
+      console.error("reCAPTCHA verification failed", verifyResult.data);
+      return buildResponse("reCAPTCHA verification failed 💀", 403);
     }
+    
+    // Send email
+    await AWSEmailService.sendEmail(body, context);
+    
+    // Return success response
+    return buildResponse("Email sent successfully 🙌🏾", 200);
+    
+  } catch (error) {
+    // Log and handle errors
+    console.error("Error processing request:", error);
+    return buildResponse(`Server error: ${error.message}`, 500);
   }
-}
+};
