@@ -15,4 +15,6 @@ Deploy: `npm run deploy` or `yarn sls deploy --verbose`
 
 **Note**: Ensure you deploy when you make changes to files within the `serverless-contact-form` directory. Look to automate this step in CI.
 
+Make sure you have `aws` CLI installed and if not logged in you may need to run `aws configure`.
+
 Test locally: `yarn sls invoke local --function staticSiteMailer --path data.json`
