@@ -21,10 +21,6 @@ function buildResponse(message, statusCode) {
 module.exports.staticSiteMailer = async (event, context, callback) => {
 
   const body = JSON.parse(event.body);
-  if (body.message === "" || body.message === undefined) {
-    callback(null, buildResponse("Bad request 🤖", 400));
-  }
-  
   let verifyResult;
 
   if (body["g-recaptcha-response"] == null) {
@@ -36,6 +32,9 @@ module.exports.staticSiteMailer = async (event, context, callback) => {
     });
 
     if (verifyResult.status === 200) {
+      if (!body.message) { // TODO: Add other validation here.
+        callback(null, buildResponse("Bad request 🤖", 400));
+      }
       AWSEmailService.sendEmail(body, context);
       callback(null, buildResponse("Success 🙌🏾", 200))
     } else {
