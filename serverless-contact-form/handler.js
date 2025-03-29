@@ -22,39 +22,39 @@ module.exports.staticSiteMailer = async (event, context, callback) => {
   try {
     // Parse request body
     const body = JSON.parse(event.body);
-    
+
     // Validate required fields
-    if (body.name === undefined || body.message === undefined) {
-      return buildResponse("Bad request: missing required fields 🤖", 400);
+    if (!body.name || !body.message) {
+      console.error("Name or message was not provided");
+      callback(null, buildResponse("Bad request 💀", 400));
+      return;
     }
-    
+
     // Validate reCAPTCHA
     if (!body["g-recaptcha-response"]) {
-      console.error("reCAPTCHA token missing");
-      return buildResponse("reCAPTCHA verification required", 400);
+      console.error("reCAPTCHA was null");
+      callback(null, buildResponse("reCAPTCHA verification required", 400));
+      return; 
     }
-    
+
     // Verify reCAPTCHA token
     const verifyResult = await axios.post(reCaptchaUrl, {
       secret: process.env.RECAPTCHA_SECRET_KEY,
       response: body["g-recaptcha-response"]
     });
-    
-    // Check reCAPTCHA verification result
-    if (verifyResult.data.success !== true) {
-      console.error("reCAPTCHA verification failed", verifyResult.data);
-      return buildResponse("reCAPTCHA verification failed 💀", 403);
+
+    // Send email if verification succeeded
+    if (verifyResult.status === 200) {
+      await AWSEmailService.sendEmail(body, context);
+      callback(null, buildResponse("Success 🙌🏾", 200));
+    } else {
+      console.error("reCAPTCHA verification failed", verifyResult.status);
+      callback(null, buildResponse("reCAPTCHA failed to authenticate 💀", 403));
     }
-    
-    // Send email
-    await AWSEmailService.sendEmail(body, context);
-    
-    // Return success response
-    return buildResponse("Email sent successfully 🙌🏾", 200);
     
   } catch (error) {
     // Log and handle errors
     console.error("Error processing request:", error);
-    return buildResponse(`Server error: ${error.message}`, 500);
+    callback(null, buildResponse("Server error", 500));
   }
 };
