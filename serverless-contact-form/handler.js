@@ -21,6 +21,10 @@ function buildResponse(message, statusCode) {
 module.exports.staticSiteMailer = async (event, context, callback) => {
 
   const body = JSON.parse(event.body);
+  if (body.message === "" || body.message === undefined) {
+    callback(null, buildResponse("Bad request 🤖", 400));
+  }
+  
   let verifyResult;
 
   if (body["g-recaptcha-response"] == null) {
